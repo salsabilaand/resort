@@ -22,3 +22,6 @@ Route::get('/registration', [CustomAuthController::class, 'registration']);
 Route::post('/registration-user', [CustomAuthController::class, 'registrationUser'])->name('register-user');
 Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
 Route::get('/dashboard', [CustomAuthController::class, 'dashboard']);
+Route::get('/coba', function () {
+    return view('auth.coba');
+});

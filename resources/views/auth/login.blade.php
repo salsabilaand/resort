@@ -1,42 +1,74 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Login</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4" style="margin-top:20px">
-                    <h4>Login</h4><hr>
-                    <form action="{{route('login-user')}}" method="POST">
-                        @if(Session::has('success'))
-                        <div class="alert alert-success">{{Session::get('success')}}</div>
-                        @endif
-                        @if(Session::has('fail'))
-                        <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                        @endif
-                        @csrf
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" value="{{old('email')}}" class="form-control" placeholder="Enter Email">
-                            <span class="text-danger">@error('email') {{$message}} @enderror</span>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('templete/fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('templete/css/owl.carousel.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('templete/css/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('templete/css/style.css')}}">
+
+    <title>Login</title>
+  </head>
+  <body>
+      <div class="content">
+          <div class="container">
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="{{asset('templete/images/undraw_remotely_2j6y.svg')}}" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 contents">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="mb-4">
+                                    <h1>Login</h1>
+                                </div>
+                                <form action="{{route('login-user')}}" method="POST">
+                                    @if(Session::has('success'))
+                                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                                    @endif
+                                    @if(Session::has('fail'))
+                                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                                    @endif
+                                    @csrf
+                                    <div class="form-group first">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" value="{{old('email')}}" id="email"  class="form-control">
+                                        <span class="text-danger">@error('email') {{$message}} @enderror</span>
+                                    </div>
+                                    <div class="form-group last mb-4">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" value="{{old('password')}}" id="password" class="form-control">
+                                        <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                                    </div>
+                                    
+                                    <div class="d-flex mb-5 align-items-center">
+                                        <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                                            <input type="checkbox" checked="checked"/>
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <span class="ml-auto"><a href="registration" class="forgot-pass">Registration Here!</a></span> 
+                                    </div>
+                                    
+                                    <button class="btn btn-block btn-primary" type="submit">Login</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Enter Password">
-                            <span class="text-danger">@error('password') {{$message}} @enderror</span>
-                        </div><br>
-                        <div class="form-group">
-                            <button class="btn btn-block btn-primary" type="submit">Login</button>
-                        </div>
-                        <a href="registration">New User? Registration Here!</a>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{{asset('templete/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('templete/js/popper.min.js')}}"></script>
+    <script src="{{asset('templete/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('templete/js/main.js')}}"></script>
 </html>

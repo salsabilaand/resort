@@ -44,11 +44,11 @@ class CustomAuthController extends Controller
                 $request->session()->put('loginId',$user->id);
                 $role = $request->role;
                 if($role=='0'){
-
+                    return view('dashboard.dashboard-admin');
                 }else if($role=='1'){
-
+                    return view('dashboard.dashboard-resort');
                 }else{
-                    return redirect('dashboard');
+                    return view('dashboard.dashboard-pengunjung');
                 }
             }else{
                 return back()->with('fail','Password not matches.');
@@ -56,8 +56,5 @@ class CustomAuthController extends Controller
         }else{
             return back()->with('fail','The email is not registered.');
         }
-    }
-    public function dashboard(){
-        return "Welcome!! To your dashboard";
     }
 }
