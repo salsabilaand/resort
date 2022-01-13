@@ -42,13 +42,17 @@ class CustomAuthController extends Controller
         if($user){
             if(Hash::check($request->password, $user->password)){
                 $request->session()->put('loginId',$user->id);
-                $role = $request->role;
-                if($role=='0'){
-                    return view('dashboard.dashboard-admin');
-                }else if($role=='1'){
-                    return view('dashboard.dashboard-resort');
+                $role = $user->role;
+                if($role){
+                    if($role=='0'){
+                        return view('dashboard.dashboard-admin');
+                    }else if($role=='1'){
+                        return view('dashboard.dashboard-resort');
+                    }else{
+                        return view('dashboard.dashboard-pengunjung');
+                    }
                 }else{
-                    return view('dashboard.dashboard-pengunjung');
+                    return back()->with('fail','rolenya apa ges.');
                 }
             }else{
                 return back()->with('fail','Password not matches.');
