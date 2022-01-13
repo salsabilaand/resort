@@ -47,7 +47,7 @@ class CustomAuthController extends Controller
                     if($role=='0'){
                         return view('dashboard.dashboard-admin');
                     }else if($role=='1'){
-                        return view('dashboard.dashboard-resort');
+                        return view('kamar.data-kamar');
                     }else{
                         return view('dashboard.dashboard-pengunjung');
                     }
