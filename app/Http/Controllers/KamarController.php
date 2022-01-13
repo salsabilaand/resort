@@ -14,10 +14,12 @@ class KamarController extends Controller
      */
     public function index()
     {
+        $dtKamar = Kamar::all();
+        // return view('kamar.data-kamar', ['dtKamar' => $dtKamar]);
         // $dtKamar = Kamar::latest()->get();
-        // return view('kamar.data-kamar', compact('dtKamar'));
-        $dtKamar = Kamar::findOrFail($dtKamar->id); 
-        return view('kamar.data-kamar', compact('dtKamar')); 
+        return view('kamar.data-kamar', compact('dtKamar'));
+        // $dtKamar = Kamar::findOrFail($dtKamar->id); 
+        // return view('kamar.data-kamar', compact('dtKamar')); 
     }
 
     /**

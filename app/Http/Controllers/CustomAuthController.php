@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Kamar;
 use Hash;
 use Session;
 
@@ -47,7 +48,8 @@ class CustomAuthController extends Controller
                     if($role=='0'){
                         return view('dashboard.dashboard-admin');
                     }else if($role=='1'){
-                        return view('kamar.data-kamar');
+                        $dtKamar = Kamar::all();
+                        return view('kamar.data-kamar', compact('dtKamar'));
                     }else{
                         return view('dashboard.dashboard-pengunjung');
                     }
