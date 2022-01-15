@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kamar;
+use App\Models\Transaksi;
 
-class KamarController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class KamarController extends Controller
      */
     public function index()
     {
-        $dtKamar = Kamar::all();
-        return view('kamar.data-kamar', compact('dtKamar'));
+        $dtTransaksi = Transaksi::all();
+        return view('transaksi.data-transaksi', compact('dtTransaksi'));
     }
 
     /**
@@ -25,7 +25,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        return view('kamar.input-kamar');
+        return view('transaksi.input-transaksi');
     }
 
     /**
@@ -37,20 +37,18 @@ class KamarController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $nm = $request->image;
-        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); //memberi nama file dengan nomor acak
-
-        $dtUpload = new Kamar;
-        $dtUpload->jenis_kamar  = $request->jenis_kamar;
-        $dtUpload->image        = $namaFile;
-        $dtUpload->tipe_kamar   = $request->tipe_kamar;
+        $dtUpload = new Transaksi;
+        $dtUpload->nama         = $request->nama;
+        $dtUpload->telepon      = $request->telepon;
+        $dtUpload->email        = $request->email;
+        $dtUpload->tgl_masuk    = $request->tgl_masuk;
+        $dtUpload->tgl_keluar   = $request->tgl_keluar;
+        $dtUpload->jml_tamu     = $request->jml_tamu;
         $dtUpload->harga        = $request->harga;
-        $dtUpload->deskripsi    = $request->deskripsi;
-
-        $nm->move('img/', $namaFile);
+        $dtUpload->catatan      = $request->catatan;
         $dtUpload->save();
-        
-        return redirect('data-kamar');
+
+        return redirect('data-transaksi');
     }
 
     /**
@@ -72,8 +70,8 @@ class KamarController extends Controller
      */
     public function edit($id)
     {
-        $dt = Kamar::findorfail($id);
-        return view('kamar.edit-kamar',compact('dt'));
+        $dt = Transaksi::findorfail($id);
+        return view('transaksi.edit-transaksi',compact('dt'));
     }
 
     /**
@@ -85,25 +83,21 @@ class KamarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ubah = Kamar::findorfail($id);
-        $awal = $ubah->image;
+        $ubah = Transaksi::findorfail($id);
 
         $dt = [
-            'jenis_kamar'   => $request['jenis_kamar'],
-            'image'         => $awal,
-            'tipe_kamar'    => $request['tipe_kamar'],
+            'nama'          => $request['nama'],
+            'telepon'       => $request['telepon'],
+            'email'         => $request['email'],
+            'tgl_masuk'     => $request['tgl_masuk'],
+            'tgl_keluar'    => $request['tgl_keluar'],
+            'jml_tamu'      => $request['jml_tamu'],
             'harga'         => $request['harga'],
-            'deskripsi'     => $request['deskripsi'],
+            'catatan'       => $request['catatan'],
         ];
-        
-        if ($request->hasFile('image')) {
-            $ubah->delete_image();
-            $image = $request->file('image');
-            $request->image->move('img/', $awal);
-        }
 
         $ubah->update($dt);
-        return redirect('data-kamar');
+        return redirect('data-transaksi');
     }
 
     /**
@@ -115,14 +109,7 @@ class KamarController extends Controller
     public function destroy($id)
     {
         // dd($id);
-        $hapus = Kamar::findorfail($id);
-
-        $file = ('img/').$hapus->image;
-        //cek jika ada gambar
-        if (file_exists($file)){
-            //maka hapus file dari folder img
-            @unlink($file);
-        }
+        $hapus = Transaksi::findorfail($id);
         //hapus data drai db
         $hapus->delete();
         return back();

@@ -33,17 +33,17 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-clipboard-check"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
-              Data Transaksi
+              Data Pelanggan
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+            <a href="{{route('data-transaksi')}}" class="nav-link">
+              <i class="nav-icon fas fa-clipboard-check"></i>
               <p>
-              Data Pelanggan
+              Data Transaksi
               </p>
             </a>
           </li>

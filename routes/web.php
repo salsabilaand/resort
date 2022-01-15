@@ -37,3 +37,11 @@ Route::post('/input-proses-kamar', [App\Http\Controllers\KamarController::class,
 Route::get('/edit-kamar/{id}', [App\Http\Controllers\KamarController::class, 'edit'])->name('edit-kamar');
 Route::post('/edit-proses-kamar/{id}', [App\Http\Controllers\KamarController::class, 'update'])->name('edit-proses-kamar');
 Route::get('/hapus-kamar/{id}', [App\Http\Controllers\KamarController::class, 'destroy'])->name('hapus-kamar');
+
+//Route Transaksi
+Route::get('/data-transaksi', [App\Http\Controllers\TransaksiController::class, 'index'])->name('data-transaksi');
+Route::get('/input-transaksi', [App\Http\Controllers\TransaksiController::class, 'create'])->name('input-transaksi');
+Route::post('/input-proses-transaksi', [App\Http\Controllers\TransaksiController::class, 'store'])->name('input-proses-transaksi');
+Route::get('/edit-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'edit'])->name('edit-transaksi');
+Route::post('/edit-proses-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('edit-proses-transaksi');
+Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('hapus-transaksi');
