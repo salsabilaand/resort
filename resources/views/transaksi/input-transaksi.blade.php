@@ -47,6 +47,15 @@
             <input type="text" name="email" placeholder="Masukkan Alamat Email..." class="form-control">
           </div>
           <div class="form-group">
+            <label>Jenis Kamar</label>
+            <select class="form-control select2" style="width: 100%;" name="kamar_id" id="kamar_id">
+              <option value=""> -- Pilih Jenis Kamar -- </option>
+              @foreach ($kmr as $item)
+                  <option value="{{$item->id}}"> {{$item->jenis_kamar}} </option>
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group">
             <label>Tanggal Check In</label>
             <input type="date" name="tgl_masuk" class="form-control">
           </div>

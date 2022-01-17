@@ -44,6 +44,7 @@
               <th>Nama Pelanggan</th>
               <th>Telepon</th>
               <th>Email</th>
+              <th>Jenis Kamar</th>
               <th>Check In</th>
               <th>Check Out</th>
               <th>Jumlah Tamu</th>
@@ -58,6 +59,7 @@
               <th>{{$item->nama}}</th>
               <th>{{$item->telepon}}</th>
               <th>{{$item->email}}</th>
+              <th>{{$item->kamar->jenis_kamar}}</th>
               <th>{{$item->tgl_masuk}}</th>
               <th>{{$item->tgl_keluar}}</th>
               <th>{{$item->jml_tamu}}</th>

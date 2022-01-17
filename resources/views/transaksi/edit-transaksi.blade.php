@@ -48,6 +48,15 @@
             <input type="text" name="email" value="{{$dt->email}}" class="form-control">
           </div>
           <div class="form-group">
+            <label>Jenis Kamar</label>
+            <select class="form-control select2" style="width: 100%;" name="kamar_id" id="kamar_id">
+              <option value="{{$dt->kamar_id}}"> {{$dt->kamar->jenis_kamar}} </option>
+              @foreach ($kmr as $item)
+                  <option value="{{$item->id}}"> {{$item->jenis_kamar}} </option>
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group">
             <label>Tanggal Check In</label>
             <input type="date" name="tgl_masuk" class="form-control" value="{{$dt->tgl_masuk}}">
           </div>

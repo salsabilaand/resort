@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use App\Models\Kamar;
 
 class TransaksiController extends Controller
 {
@@ -14,7 +15,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $dtTransaksi = Transaksi::all();
+        $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(5);
         return view('transaksi.data-transaksi', compact('dtTransaksi'));
     }
 
@@ -25,7 +26,8 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.input-transaksi');
+        $kmr = Kamar::all();
+        return view('transaksi.input-transaksi', compact('kmr'));
     }
 
     /**
@@ -38,14 +40,15 @@ class TransaksiController extends Controller
     {
         // dd($request->all());
         $dtUpload = new Transaksi;
-        $dtUpload->nama         = $request->nama;
-        $dtUpload->telepon      = $request->telepon;
-        $dtUpload->email        = $request->email;
-        $dtUpload->tgl_masuk    = $request->tgl_masuk;
-        $dtUpload->tgl_keluar   = $request->tgl_keluar;
-        $dtUpload->jml_tamu     = $request->jml_tamu;
-        $dtUpload->harga        = $request->harga;
-        $dtUpload->catatan      = $request->catatan;
+        $dtUpload->nama             = $request->nama;
+        $dtUpload->telepon          = $request->telepon;
+        $dtUpload->email            = $request->email;
+        $dtUpload->kamar_id         = $request->kamar_id;
+        $dtUpload->tgl_masuk        = $request->tgl_masuk;
+        $dtUpload->tgl_keluar       = $request->tgl_keluar;
+        $dtUpload->jml_tamu         = $request->jml_tamu;
+        $dtUpload->harga            = $request->harga;
+        $dtUpload->catatan          = $request->catatan;
         $dtUpload->save();
 
         return redirect('data-transaksi');
@@ -70,8 +73,9 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        $dt = Transaksi::findorfail($id);
-        return view('transaksi.edit-transaksi',compact('dt'));
+        $kmr = Kamar::all();
+        $dt = Transaksi::with('kamar')->findorfail($id);
+        return view('transaksi.edit-transaksi',compact('dt', 'kmr'));
     }
 
     /**
@@ -86,14 +90,15 @@ class TransaksiController extends Controller
         $ubah = Transaksi::findorfail($id);
 
         $dt = [
-            'nama'          => $request['nama'],
-            'telepon'       => $request['telepon'],
-            'email'         => $request['email'],
-            'tgl_masuk'     => $request['tgl_masuk'],
-            'tgl_keluar'    => $request['tgl_keluar'],
-            'jml_tamu'      => $request['jml_tamu'],
-            'harga'         => $request['harga'],
-            'catatan'       => $request['catatan'],
+            'nama'              => $request['nama'],
+            'telepon'           => $request['telepon'],
+            'email'             => $request['email'],
+            'kamar_id'          => $request['kamar_id'],
+            'tgl_masuk'         => $request['tgl_masuk'],
+            'tgl_keluar'        => $request['tgl_keluar'],
+            'jml_tamu'          => $request['jml_tamu'],
+            'harga'             => $request['harga'],
+            'catatan'           => $request['catatan'],
         ];
 
         $ubah->update($dt);

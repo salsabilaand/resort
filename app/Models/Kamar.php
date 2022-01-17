@@ -13,4 +13,8 @@ class Kamar extends Model
     protected $fillable = [
         'id', 'jenis_kamar', 'image', 'tipe_kamar', 'harga', 'deskripsi'
     ];
+
+    public function transaksi(){
+        return $this->hasMany(Transaksi::class);
+    }
 }
