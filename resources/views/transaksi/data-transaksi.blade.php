@@ -73,6 +73,12 @@
             @endforeach
           </table>
         </div>
+        <!-- membuat paginate -->
+          {{-- Current Page: {{ $dtTransaksi->currentPage() }}<br>
+          Jumlah Data: {{ $dtTransaksi->total() }}<br>
+          Data perhalaman: {{ $dtTransaksi->perPage() }}<br>
+          <br>
+          {{$dtTransaksi->links()}} --}}
       </div>
 
 <!-- REQUIRED SCRIPTS -->

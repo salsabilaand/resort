@@ -19,6 +19,7 @@ class CreateTransaksisTable extends Migration
             $table->string('nama');
             $table->integer('telepon');
             $table->string('email');
+            $table->bigint('kamar_id');
             $table->date('tgl_masuk');
             $table->date('tgl_keluar');
             $table->integer('jml_tamu');

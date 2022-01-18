@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\DashboardPemilikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard-pemilik', [App\Http\Controllers\DashboardPemilikController::class, 'index'])->name('dashboard-pemilik');
 
 //Route Login
 Route::get('/login', [App\Http\Controllers\CustomAuthController::class, 'login']);

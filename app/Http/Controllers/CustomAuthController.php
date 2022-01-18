@@ -49,8 +49,7 @@ class CustomAuthController extends Controller
                     if($role=='0'){
                         return view('dashboard.dashboard-admin');
                     }else if($role=='1'){
-                        $dtKamar = Kamar::all();
-                        return view('kamar.data-kamar', compact('dtKamar'));
+                        return view('dashboard.dashboard-pemilik');
                     }else{
                         return view('dashboard.dashboard-pengunjung');
                     }

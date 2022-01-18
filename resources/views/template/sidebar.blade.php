@@ -15,11 +15,11 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{route('home')}}" class="nav-link active">
+          <li class="nav-item">
+            <a href="{{route('dashboard-pemilik')}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+               Dashboard
               </p>
             </a>
           </li>
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="laporan-perbulan.php" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
               Laporan Bulanan
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="laporan-pertahun.php" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
               Laporan Tahunan
@@ -64,7 +64,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="logout.php" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
               Log Out

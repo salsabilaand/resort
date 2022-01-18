@@ -15,7 +15,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(5);
+        $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(2);
         return view('transaksi.data-transaksi', compact('dtTransaksi'));
     }
 
