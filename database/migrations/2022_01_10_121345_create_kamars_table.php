@@ -15,6 +15,7 @@ class CreateKamarsTable extends Migration
     {
         Schema::create('kamar', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_user');
             $table->string('jenis_kamar');
             $table->string('image')->nullable();
             $table->string('tipe_kamar');

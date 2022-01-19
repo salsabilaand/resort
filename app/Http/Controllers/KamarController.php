@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kamar;
+use Illuminate\Support\Facades\DB;
 
 class KamarController extends Controller
 {
@@ -14,7 +15,8 @@ class KamarController extends Controller
      */
     public function index()
     {
-        $dtKamar = Kamar::all();
+        $dtKamar = DB::select('select * from kamar where id_user = ?', [session('loginId')]);
+        // $dtKamar = Kamar::all();
         return view('kamar.data-kamar', compact('dtKamar'));
     }
 
@@ -41,6 +43,7 @@ class KamarController extends Controller
         $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); //memberi nama file dengan nomor acak
 
         $dtUpload = new Kamar;
+        $dtUpload->id_user      = session('loginId');
         $dtUpload->jenis_kamar  = $request->jenis_kamar;
         $dtUpload->image        = $namaFile;
         $dtUpload->tipe_kamar   = $request->tipe_kamar;

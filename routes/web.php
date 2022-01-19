@@ -31,6 +31,13 @@ Route::get('/dashboard', [App\Http\Controllers\CustomAuthController::class, 'das
 Route::get('/coba', function () {
     return view('auth.coba');
 });
+Route::get('/logout', ['as' => 'logout', function (){
+    if(session()->has('loginId')){
+        session()->pull('loginId');
+        session()->pull('loginName');
+        return redirect('login');
+    }
+}]);
 
 //Route Kamar
 Route::get('/data-kamar', [App\Http\Controllers\KamarController::class, 'index'])->name('data-kamar');
