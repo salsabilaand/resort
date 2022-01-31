@@ -47,7 +47,7 @@ class CustomAuthController extends Controller
                 $request->session()->put('loginName',$user->name);
                 $role = $user->role;
                 if($role){
-                    if($role=='0'){
+                    if($role=='3'){
                         return view('dashboard.dashboard-admin');
                     }else if($role=='1'){
                         return view('dashboard.dashboard-pemilik');
