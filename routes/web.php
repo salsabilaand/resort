@@ -54,3 +54,6 @@ Route::post('/input-proses-transaksi', [App\Http\Controllers\TransaksiController
 Route::get('/edit-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'edit'])->name('edit-transaksi');
 Route::post('/edit-proses-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('edit-proses-transaksi');
 Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('hapus-transaksi');
+
+//Route Pengunjung
+Route::get('/beranda-pengunjung', [App\Http\Controllers\KamarController::class, 'index'])->name('data-kamar');
