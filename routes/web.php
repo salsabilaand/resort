@@ -57,11 +57,9 @@ Route::get('/edit-transaksi/{id}', [App\Http\Controllers\TransaksiController::cl
 Route::post('/edit-proses-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('edit-proses-transaksi');
 Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('hapus-transaksi');
 
-<<<<<<< HEAD
 //Route Admin
 Route::get('/data-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'index'])->name('data-pemilik-resort');
 Route::get('/input-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'create'])->name('input-pemilik-resort');
-=======
+
 //Route Pengunjung
 Route::get('/beranda-pengunjung', [App\Http\Controllers\KamarController::class, 'index'])->name('data-kamar');
->>>>>>> 628f1d5e7e39487945cae0fd1036678b489ffacb
