@@ -61,8 +61,8 @@
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                            <h2 class="title title_color">Pulau Pangempa</h2>
+                            <p>Di Pulau Pangempa Anda dapat melakukan berbagai aktivitas seperti diving, snorkeling, tracking dan village tour. Anda juga dapat bersantai sambil menikmati pemandangan alam yang disuguhkan di pulau ini.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -76,8 +76,8 @@
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                            <h2 class="title title_color">Pulau Bolilanga</h2>
+                            <p>Di pulau ini wisatawan dapat melakukan aktivitas snorkeling, memancing menggunakan peahu nelayan dan juga melakukan hiking untuk mengamati kepiting kelapa. Pulau Bolilanga memiliki perairan yang jernih, sehingga wisatawan dapat bermain dan memotret ikan karang Togean yang berwarna-warni seperti ikan lionfish.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
