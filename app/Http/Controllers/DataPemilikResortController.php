@@ -79,7 +79,8 @@ class DataPemilikResortController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dt = User::findorfail($id);
+        return view('admin.edit-pemilik-resort',compact('dt'));
     }
 
     /**
@@ -91,7 +92,16 @@ class DataPemilikResortController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ubah = User::findorfail($id);
+
+        $dt = [
+            'name'              => $request['name'],
+            'email'             => $request['email'],
+            'password'          => Hash::make($request['password']),
+        ];
+
+        $ubah->update($dt);
+        return redirect('data-pemilik-resort');
     }
 
     /**
@@ -102,6 +112,10 @@ class DataPemilikResortController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $hapus = User::findorfail($id);
+        //hapus data drai db
+        $hapus->delete();
+        return back();
     }
 }

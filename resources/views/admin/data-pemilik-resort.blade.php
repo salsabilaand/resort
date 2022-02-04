@@ -35,6 +35,7 @@
         <div class="card-header">
           <div class="card-tools">
             <a href="{{route('input-pemilik-resort')}}" class="btn btn-success">Tambah Data<i class="fas fa-plus-square"></i></a>
+            <a href="" class="btn btn-primary float-left">Cetak<i class="fas fa-print"></i></a>
           </div>
         </div>
 
@@ -55,8 +56,8 @@
               <th>{{$item->email}}</th>
               <th>{{$item->password}}</th>
               <th>
-                <a href="#"><i class="fas fa-edit"></i></a> |
-                <a href="#"><i class="fas fa-trash-alt" style="color: red" onclick="return confirm('Apakah Yakin Akan Menghapus Data?')"></i></a>
+                <a href="{{route('edit-pemilik-resort',$item->id)}}"><i class="fas fa-edit"></i></a> |
+                <a href="{{route('hapus-pemilik-resort',$item->id)}}"><i class="fas fa-trash-alt" style="color: red" onclick="return confirm('Apakah Yakin Akan Menghapus Data?')"></i></a>
               </th>
             </tr>
             @endforeach

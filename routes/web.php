@@ -61,6 +61,8 @@ Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::c
 Route::get('/data-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'index'])->name('data-pemilik-resort');
 Route::get('/input-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'create'])->name('input-pemilik-resort');
 Route::post('/input-proses-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'registrationUser'])->name('input-proses-pemilik-resort');
+Route::get('/edit-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'edit'])->name('edit-pemilik-resort');
+Route::post('/edit-proses-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'update'])->name('edit-proses-pemilik-resort');
+Route::get('/hapus-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'destroy'])->name('hapus-pemilik-resort');
 
 //Route Pengunjung
-
