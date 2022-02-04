@@ -32,7 +32,7 @@
     <section class="content">
       <div class="card card-info card-outline">
         <div class="card-body">
-        <form action="" method="POST">
+        <form action="{{route('input-proses-pemilik-resort')}}" method="POST">
             @if(Session::has('success'))
             <div class="alert alert-success">{{Session::get('success')}}</div>
             @endif
@@ -42,7 +42,7 @@
             @csrf
             {{-- {{ csrf_field() }} --}}
           <div class="form-group">
-            <label>Full Name</label>
+            <label>Nama Resort</label>
             <input type="text" name="name" value="{{old('name')}}" id="name" class="form-control">
             <span class="text-danger">@error('name') {{$message}} @enderror</span>
           </div>

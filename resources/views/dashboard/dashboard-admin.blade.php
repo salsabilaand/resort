@@ -26,7 +26,7 @@
           </div>
           <div class="col-sm-12">
             <center><h1 class="m-0 text-dark"><b>Website Desa Wisata dan Reservasi Resort</b></h1></center>
-            <center><h1 class="m-0 text-dark"><b>Pada Desa Katupat, Tojo Una-Una, SUlawesi Tengah</b></h1></center>
+            <center><h1 class="m-0 text-dark"><b>Pada Desa Katupat, Tojo Una-Una, Sulawesi Tengah</b></h1></center>
             </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->

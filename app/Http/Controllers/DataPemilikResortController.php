@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Hash;
+use Session;
 
 class DataPemilikResortController extends Controller
 {
@@ -13,9 +17,28 @@ class DataPemilikResortController extends Controller
      */
     public function index()
     {
-        return view('admin.data-pemilik-resort');
+        $dtResort = DB::select('select * from users where role = ?', ['1']);
+        return view('admin.data-pemilik-resort', compact('dtResort'));
     }
 
+    public function registrationUser(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:8'
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = '1';
+        $res = $user->save();
+        if ($res) {
+            return redirect('data-pemilik-resort')->with('success', 'You have registered Succesfuly');
+        }else{
+            return back()->with('fail', 'Something wrong');
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

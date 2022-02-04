@@ -42,11 +42,24 @@
           <table class="table table-bordered">
             <tr>
               <th>No</th>
-              <th>Nama</th>
+              <th>Nama Resort</th>
               <th>Email</th>
               <th>Password</th>
               <th>Aksi</th>
             </tr>
+            <?php $no = 1 ?>
+            @foreach ($dtResort as $item)
+            <tr>
+              <th>{{$no++}}</th>
+              <th>{{$item->name}}</th>
+              <th>{{$item->email}}</th>
+              <th>{{$item->password}}</th>
+              <th>
+                <a href="#"><i class="fas fa-edit"></i></a> |
+                <a href="#"><i class="fas fa-trash-alt" style="color: red" onclick="return confirm('Apakah Yakin Akan Menghapus Data?')"></i></a>
+              </th>
+            </tr>
+            @endforeach
           </table>
         </div>
       </div>
