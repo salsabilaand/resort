@@ -4,8 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="pengunjung/image/favicon.png" type="image/png">
-        <title>Royal Hotel</title>
+        <title>Wisata Desa Katupat</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="pengunjung/css/bootstrap.css">
         <link rel="stylesheet" href="pengunjung/vendors/linericon/style.css">
@@ -24,7 +23,6 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html"><img src="pengunjung/image/Logo.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -33,7 +31,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Bearnda</a></li> 
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Beranda</a></li> 
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Penginapan</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">Akun</a></li>
                         </ul>
@@ -49,8 +47,7 @@
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h6>Away from monotonous life</h6>
-						<h2>Relax Your Mind</h2>
+						<h2>Desa Katupat</h2>
 						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
 					</div>
 				</div>
@@ -69,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/about_bg.jpg" alt="img">
+                        <img class="img-fluid" src="pengunjung/image/foot1.jpg" alt="img">
                     </div>
                 </div>
             </div>
@@ -84,7 +81,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/about_bg.jpg" alt="img">
+                        <img class="img-fluid" src="pengunjung/image/foot2.jpg" alt="img">
                     </div>
                 </div>
             </div>
@@ -97,8 +94,8 @@
                 <div class="row">
                     <div class="col-lg-8  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">About Agency</h6>
-                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+                            <h6 class="footer_title">Tentang</h6>
+                            <p>Desa Katupat adalah salah satu desa di Kecamatan Togean, Kabupaten Tojo Una-Una, Provinsi Sulawesi Tengah, Indonesia.</p>
                         </div>
                     </div>											
                 </div>
