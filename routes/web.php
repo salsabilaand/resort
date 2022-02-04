@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\DashboardPemilikController;
+// use App\Http\Controllers\DashboardAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard-pemilik', [App\Http\Controllers\DashboardPemilikController::class, 'index'])->name('dashboard-pemilik');
+// Route::get('/dashboard-admin', [App\Http\Controllers\DashboardAdminController::class, 'index'])->name('dashboard-admin');
 
 //Route Login
 Route::get('/login', [App\Http\Controllers\CustomAuthController::class, 'login']);
@@ -54,3 +56,7 @@ Route::post('/input-proses-transaksi', [App\Http\Controllers\TransaksiController
 Route::get('/edit-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'edit'])->name('edit-transaksi');
 Route::post('/edit-proses-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('edit-proses-transaksi');
 Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('hapus-transaksi');
+
+//Route Admin
+Route::get('/data-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'index'])->name('data-pemilik-resort');
+Route::get('/input-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'create'])->name('input-pemilik-resort');
