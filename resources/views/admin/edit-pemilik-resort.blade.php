@@ -44,23 +44,17 @@
           {{-- {{ csrf_field() }} --}}
           <div class="form-group">
             <label>Nama Resort</label>
-            {{-- <input type="text" name="jenis_kamar" class="form-control" value="{{$dt->jenis_kamar}}"> --}}
             <input type="text" name="name" value="{{$dt->name}}" id="name" class="form-control">
-            {{-- <input type="text" name="name" value="{{$dt->old('name')}}" id="name" class="form-control"> --}}
             <span class="text-danger">@error('name') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label>Email</label>
-            {{-- <input type="text" name="tipe_kamar" class="form-control" value="{{$dt->tipe_kamar}}"> --}}
             <input type="email" name="email" value="{{$dt->email}}" id="email"  class="form-control">
-            {{-- <input type="email" name="email" value="{{$dt->old('email')}}" id="email"  class="form-control"> --}}
             <span class="text-danger">@error('email') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label>Password</label>
-            {{-- <input type="text" name="harga" class="form-control" value="{{$dt->harga}}"> --}}
             <input type="password" name="password" value="{{$dt->password}}" id="password" class="form-control">
-            {{-- <input type="password" name="password" value="{{$dt->old('password')}}" id="password" class="form-control"> --}}
             <span class="text-danger">@error('password') {{$message}} @enderror</span>
           </div>
           <div class="form-group">

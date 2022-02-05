@@ -35,7 +35,7 @@
         <div class="card-header">
           <div class="card-tools">
             <a href="{{route('input-pemilik-resort')}}" class="btn btn-success">Tambah Data<i class="fas fa-plus-square"></i></a>
-            <a href="" class="btn btn-primary float-left">Cetak<i class="fas fa-print"></i></a>
+            <a href="{{route('cetak-pemilik-resort')}}" target="_blank" class="btn btn-primary float-left">Cetak<i class="fas fa-print"></i></a>
           </div>
         </div>
 

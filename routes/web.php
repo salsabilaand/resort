@@ -64,5 +64,6 @@ Route::post('/input-proses-pemilik-resort', [App\Http\Controllers\DataPemilikRes
 Route::get('/edit-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'edit'])->name('edit-pemilik-resort');
 Route::post('/edit-proses-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'update'])->name('edit-proses-pemilik-resort');
 Route::get('/hapus-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResortController::class, 'destroy'])->name('hapus-pemilik-resort');
+Route::get('/cetak-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'cetak'])->name('cetak-pemilik-resort');
 
 //Route Pengunjung

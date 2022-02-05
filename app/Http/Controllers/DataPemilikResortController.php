@@ -118,4 +118,10 @@ class DataPemilikResortController extends Controller
         $hapus->delete();
         return back();
     }
+
+    public function cetak()
+    {
+        $cetakResort = DB::select('select * from users where role = ?', ['1']);
+        return view('admin.cetak-pemilik-resort', compact('cetakResort'));
+    }
 }
