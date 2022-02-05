@@ -38,7 +38,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item active"><a class="nav-link" href="blog.html">Pengaturan Akun</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Riwayat Reservasi</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog-single.html">Logout</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -62,18 +62,14 @@
             </div>
         </section>
         <!--================Breadcrumb Area =================-->
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <div class="whole-wrap">
             <div class="container">
                 <div class="section-top-border">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <h3 class="mb-30 title_color">Form Element</h3>
-                            <form action="#">
+                            @foreach ($dtAkun as $item)
+                            <form action="{{route('edit-proses-akun-pengunjung', $item->id)}}" method="POST">
                                 @if(Session::has('success'))
                                 <div class="alert alert-success">{{Session::get('success')}}</div>
                                 @endif
@@ -81,7 +77,6 @@
                                 <div class="alert alert-danger">{{Session::get('fail')}}</div>
                                 @endif
                                 @csrf
-                                @foreach ($dtAkun as $item)
                                 <div class="form-group first">
                                     <label for="name">Full Name</label>
                                     <input type="text" name="name" value="{{$item->name}}" id="name" class="form-control">
@@ -94,24 +89,19 @@
                                 </div>
                                 <div class="form-group last mb-4">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" value="{{$item->email}}" id="password" class="form-control">
+                                    <input type="password" name="password" id="password" class="form-control">
                                     <span class="text-danger">@error('password') {{$message}} @enderror</span>
                                 </div>
-                                @endforeach
                                 <div class="button-group-area">
-                                    <a href="#" class="genric-btn success">Success</a>
+                                    <input type="submit" class="genric-btn success"></button>
                                 </div>
                             </form>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
             <div class="container">
@@ -135,13 +125,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
-<<<<<<< HEAD
-
-
-=======
-        
-        
->>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="pengunjung/js/jquery-3.2.1.min.js"></script>

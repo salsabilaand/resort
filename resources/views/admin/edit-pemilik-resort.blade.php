@@ -58,8 +58,8 @@
             <span class="text-danger">@error('email') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" value="{{$dt->password}}" id="password" class="form-control">
+            <label>New Password</label>
+            <input type="password" name="password" id="password" class="form-control">
             <span class="text-danger">@error('password') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
