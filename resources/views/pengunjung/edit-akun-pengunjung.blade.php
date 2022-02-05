@@ -31,12 +31,12 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Beranda</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li> 
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Penginapan</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="blog.html">Pengaturan Akun</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Riwayat Reservasi</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Logout</a></li>
                                 </ul>
@@ -47,54 +47,63 @@
             </div>
         </header>
         <!--================Header Area =================-->
-        
-        <!--================Banner Area =================-->
-        <section class="banner_area">
-            <div class="booking_table d_flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h2>Desa Katupat</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
-					</div>
-				</div>
-            </div>
-        </section>
-        <!--================Banner Area =================-->
-        
-        <!--================ About History Area  =================-->
-        <section class="about_history_area section_gap">
+
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area blog_banner_two">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">Pulau Pangempa</h2>
-                            <p>Di Pulau Pangempa Anda dapat melakukan berbagai aktivitas seperti diving, snorkeling, tracking dan village tour. Anda juga dapat bersantai sambil menikmati pemandangan alam yang disuguhkan di pulau ini.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/foot1.jpg" alt="img">
-                    </div>
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle f_48">Pengaturan Akun</h2>
+                    <ol class="breadcrumb">
+                            <li><a href="index.html">Akun</a></li>
+                            <li class="active">Pengaturan Akun</li>
+                    </ol>
                 </div>
             </div>
         </section>
-        <section class="about_history_area section_gap">
+        <!--================Breadcrumb Area =================-->
+
+        <div class="whole-wrap">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">Pulau Bolilanga</h2>
-                            <p>Di pulau ini wisatawan dapat melakukan aktivitas snorkeling, memancing menggunakan peahu nelayan dan juga melakukan hiking untuk mengamati kepiting kelapa. Pulau Bolilanga memiliki perairan yang jernih, sehingga wisatawan dapat bermain dan memotret ikan karang Togean yang berwarna-warni seperti ikan lionfish.</p>
+                <div class="section-top-border">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <h3 class="mb-30 title_color">Form Element</h3>
+                            <form action="#">
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">{{Session::get('success')}}</div>
+                                @endif
+                                @if(Session::has('fail'))
+                                <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                                @endif
+                                @csrf
+                                @foreach ($dtAkun as $item)
+                                <div class="form-group first">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" name="name" value="{{$item->name}}" id="name" class="form-control">
+                                    <span class="text-danger">@error('name') {{$message}} @enderror</span>
+                                </div>
+                                <div class="form-group first">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" value="{{$item->email}}" id="email"  class="form-control">
+                                    <span class="text-danger">@error('email') {{$message}} @enderror</span>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" value="{{$item->email}}" id="password" class="form-control">
+                                    <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                                </div>
+                                @endforeach
+                                <div class="button-group-area">
+                                    <a href="#" class="genric-btn success">Success</a>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/foot2.jpg" alt="img">
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================ About History Area  =================-->
-        
+        </div>
+
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
             <div class="container">
@@ -118,8 +127,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
-        
-        
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="pengunjung/js/jquery-3.2.1.min.js"></script>

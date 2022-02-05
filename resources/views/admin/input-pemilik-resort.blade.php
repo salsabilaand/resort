@@ -47,6 +47,11 @@
             <span class="text-danger">@error('name') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
+            <label>Nama Resort</label>
+            <input type="text" name="nama_resort" value="{{old('nama_resort')}}" id="nama_resort"  class="form-control">
+            <span class="text-danger">@error('nama_resort') {{$message}} @enderror</span>
+          </div>
+          <div class="form-group">
             <label>Email</label>
             <input type="email" name="email" value="{{old('email')}}" id="email"  class="form-control">
             <span class="text-danger">@error('email') {{$message}} @enderror</span>

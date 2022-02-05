@@ -43,6 +43,7 @@
           <table class="table table-bordered">
             <tr>
               <th>No</th>
+              <th>Nama Pemilik Resort</th>
               <th>Nama Resort</th>
               <th>Email</th>
               <th>Password</th>
@@ -53,6 +54,7 @@
             <tr>
               <th>{{$no++}}</th>
               <th>{{$item->name}}</th>
+              <th>{{$item->nama_resort}}</th>
               <th>{{$item->email}}</th>
               <th>{{$item->password}}</th>
               <th>

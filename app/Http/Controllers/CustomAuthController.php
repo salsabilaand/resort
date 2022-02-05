@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Transaksi;
@@ -63,5 +64,37 @@ class CustomAuthController extends Controller
         }else{
             return back()->with('fail','The email is not registered.');
         }
+    }
+
+    public function profile(){
+        $user = DB::select('select * from users where id = ?', [session('loginId')]);
+        return view('dashboard.profile-resort', compact('user'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
+        $ubah = User::findorfail($id);
+        // $id_user = DB::select('select * from users where id = ?', [session('loginId')]);
+        // $ubah = User::findorfail($id_user);
+        $awal = $ubah->photo;
+
+        $user = [
+            'nama_resort'   => $request['nama_resort'],
+            'name'    => $request['name'],
+            'email'         => $request['email'],
+            'photo'         => $awal,
+            'alamat'    => $request['alamat'],
+            'deskripsi'     => $request['deskripsi'],
+        ];
+        
+        if ($request->hasFile('photo')) {
+            // $ubah->delete_photo();
+            $photo = $request->file('photo');
+            $request->photo->move('img/', $awal);
+        }
+
+        $ubah->update($user);
+        return redirect('profile-resort');
     }
 }

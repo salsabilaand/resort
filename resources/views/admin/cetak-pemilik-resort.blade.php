@@ -18,6 +18,7 @@
             <table class="static" align="center" rules="all" border="1px" style="width: 95%;">
                 <tr>
                     <th>No</th>
+                    <th>Nama Pemilik Resort</th>
                     <th>Nama Resort</th>
                     <th>Email</th>
                 </tr>
@@ -26,6 +27,7 @@
                 <tr>
                     <th>{{$no++}}</th>
                     <th>{{$item->name}}</th>
+                    <th>{{$item->nama_resort}}</th>
                     <th>{{$item->email}}</th>
                 </tr>
                 @endforeach

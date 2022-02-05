@@ -28,9 +28,10 @@ class DataPemilikResortController extends Controller
             'password'=>'required|min:8'
         ]);
         $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        $user->name         = $request->name;
+        $user->nama_resort  = $request->nama_resort;
+        $user->email        = $request->email;
+        $user->password     = Hash::make($request->password);
         $user->role = '1';
         $res = $user->save();
         if ($res) {
@@ -95,9 +96,10 @@ class DataPemilikResortController extends Controller
         $ubah = User::findorfail($id);
 
         $dt = [
-            'name'              => $request['name'],
-            'email'             => $request['email'],
-            'password'          => Hash::make($request['password']),
+            'name'                      => $request['name'],
+            'nama_resort'               => $request['nama_resort'],
+            'email'                     => $request['email'],
+            'password'                  => Hash::make($request['password']),
         ];
 
         $ubah->update($dt);

@@ -43,9 +43,14 @@
             @csrf
           {{-- {{ csrf_field() }} --}}
           <div class="form-group">
-            <label>Nama Resort</label>
+            <label>Nama Pemilik Resort</label>
             <input type="text" name="name" value="{{$dt->name}}" id="name" class="form-control">
             <span class="text-danger">@error('name') {{$message}} @enderror</span>
+          </div>
+          <div class="form-group">
+            <label>Nama Resort</label>
+            <input type="text" name="nama_resort" value="{{$dt->nama_resort}}" id="nama_resort"  class="form-control">
+            <span class="text-danger">@error('nama_resort') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label>Email</label>

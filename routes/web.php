@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\DashboardPemilikController;
-// use App\Http\Controllers\DashboardAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +40,10 @@ Route::get('/logout', ['as' => 'logout', function (){
     }
 }]);
 
+//route profil resort
+Route::get('/profile-resort', [App\Http\Controllers\CustomAuthController::class, 'profile'])->name('profile-resort');
+Route::post('/update-profile-resort/{id}', [App\Http\Controllers\CustomAuthController::class, 'update'])->name('update-profile-resort');
+
 //Route Kamar
 Route::get('/data-kamar', [App\Http\Controllers\KamarController::class, 'index'])->name('data-kamar');
 Route::get('/input-kamar', [App\Http\Controllers\KamarController::class, 'create'])->name('input-kamar');
@@ -67,3 +70,5 @@ Route::get('/hapus-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResort
 Route::get('/cetak-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'cetak'])->name('cetak-pemilik-resort');
 
 //Route Pengunjung
+Route::get('/beranda-pengunjung', [App\Http\Controllers\PengunjungController::class, 'index'])->name('beranda-pengunjung');
+Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung'); 
