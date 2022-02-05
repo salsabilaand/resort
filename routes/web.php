@@ -73,4 +73,9 @@ Route::get('/cetak-pemilik-resort', [App\Http\Controllers\DataPemilikResortContr
 //Route Pengunjung
 Route::get('/beranda-pengunjung', [App\Http\Controllers\PengunjungController::class, 'index'])->name('beranda-pengunjung');
 Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung');
+<<<<<<< HEAD
 Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung');
+=======
+Route::post('/edit-proses-akun-pengunjung/{id}', [App\Http\Controllers\PengunjungController::class, 'updateAkun'])->name('edit-proses-akun-pengunjung');
+Route::get('/riwayat-reservasi-pengunjung', [App\Http\Controllers\PengunjungController::class, 'riwayatReservasi'])->name('riwayat-reservasi-pengunjung');
+>>>>>>> d0ad8d151817b27e35336a91f3738459bc499ac8

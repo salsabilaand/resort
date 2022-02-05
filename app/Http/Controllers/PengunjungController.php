@@ -19,6 +19,10 @@ class PengunjungController extends Controller
         return view('pengunjung.edit-akun-pengunjung', compact('dtAkun'));
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d0ad8d151817b27e35336a91f3738459bc499ac8
     public function updateAkun(Request $request, $id)
     {
         $ubah = User::findorfail($id);

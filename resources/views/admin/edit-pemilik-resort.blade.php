@@ -59,8 +59,13 @@
           </div>
           <div class="form-group">
             <label>New Password</label>
+<<<<<<< HEAD
               <input type="password" name="password" id="password" class="form-control">
               <span class="text-danger">@error('password') {{$message}} @enderror</span>
+=======
+            <input type="password" name="password" id="password" class="form-control">
+            <span class="text-danger">@error('password') {{$message}} @enderror</span>
+>>>>>>> d0ad8d151817b27e35336a91f3738459bc499ac8
           </div>
           <div class="form-group">
             <a href="{{route('data-pemilik-resort')}}" class="btn btn-danger float-right">Batal</a>
