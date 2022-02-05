@@ -67,3 +67,5 @@ Route::get('/hapus-pemilik-resort/{id}', [App\Http\Controllers\DataPemilikResort
 Route::get('/cetak-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'cetak'])->name('cetak-pemilik-resort');
 
 //Route Pengunjung
+Route::get('/beranda-pengunjung', [App\Http\Controllers\PengunjungController::class, 'index'])->name('beranda-pengunjung');
+Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung');
