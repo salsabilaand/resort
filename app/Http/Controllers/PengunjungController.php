@@ -17,5 +17,9 @@ class PengunjungController extends Controller
     public function editAkun(){
         $dtAkun = DB::select('select * from users where id = ?', [session('loginId')]);
         return view('pengunjung.edit-akun-pengunjung', compact('dtAkun'));
+<<<<<<< HEAD
     } 
+=======
+    }
+>>>>>>> 135b1a74472f93811208487eabddf985345e382f
 }

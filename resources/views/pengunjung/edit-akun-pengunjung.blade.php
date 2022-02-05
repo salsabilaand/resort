@@ -62,7 +62,11 @@
             </div>
         </section>
         <!--================Breadcrumb Area =================-->
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <div class="whole-wrap">
             <div class="container">
                 <div class="section-top-border">
@@ -103,7 +107,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
             <div class="container">
@@ -127,8 +135,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
+<<<<<<< HEAD
 
 
+=======
+        
+        
+>>>>>>> 135b1a74472f93811208487eabddf985345e382f
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="pengunjung/js/jquery-3.2.1.min.js"></script>
