@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role');
-            $table->string('nama_resort');
+            $table->string('nama_resort')->nullable();
             $table->string('photo')->nullable();
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

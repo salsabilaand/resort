@@ -73,28 +73,37 @@ class CustomAuthController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
         $ubah = User::findorfail($id);
-        // $id_user = DB::select('select * from users where id = ?', [session('loginId')]);
-        // $ubah = User::findorfail($id_user);
-        $awal = $ubah->photo;
+        $nm = $request->photo;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); 
 
         $user = [
             'nama_resort'   => $request['nama_resort'],
-            'name'    => $request['name'],
+            'name'          => $request['name'],
             'email'         => $request['email'],
-            'photo'         => $awal,
-            'alamat'    => $request['alamat'],
+            'photo'         => $namaFile,
+            'alamat'        => $request['alamat'],
             'deskripsi'     => $request['deskripsi'],
         ];
         
         if ($request->hasFile('photo')) {
-            // $ubah->delete_photo();
             $photo = $request->file('photo');
-            $request->photo->move('img/', $awal);
+            $request->photo->move('img/', $namaFile);
         }
 
         $ubah->update($user);
         return redirect('profile-resort');
+    }
+
+    public function update_password(Request $request, $id)
+    {
+        $ubah = User::findorfail($id);
+
+        $user = [
+            'password' => Hash::make($request['password']),
+        ];
+
+        $ubah->update($user);
+        return redirect('profile-resort')->with('success', 'Password Berhasil Diubah!');
     }
 }

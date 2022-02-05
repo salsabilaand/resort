@@ -30,10 +30,12 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="card card-info card-outline col-md-6">
-        @csrf
-        @foreach ($user as $item)
+      <div class="row">
 
+        <div class="card card-info card-outline col-md-6">
+          @csrf
+          @foreach ($user as $item)
+          
         <div class="card-body">
           <div class="card-body box-profile">
             <div class="text-center">
@@ -85,6 +87,39 @@
         </div>
         @endforeach
       </div>
+
+      {{-- ubah password --}}
+      <div class="card card-info card-outline col-md-6">
+        @csrf
+        @foreach ($user as $item)
+        
+        <div class="card-body">
+          <div class="card-body box-profile">
+            
+            <h3 class="profile-username text-center"><b>Ubah Password</b></h3>
+
+            <form action="{{route('update-password-pemilik-resort', $item->id)}}" method="POST">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" name="password" id="password" class="form-control">
+                <span class="text-danger">@error('password') {{$message}} @enderror</span>
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" name="password" id="password" class="form-control">
+                <span class="text-danger">@error('password') {{$message}} @enderror</span>
+              </div>
+              <div class="form-group">
+                <a href="{{route('profile-resort')}}" class="btn btn-danger float-right">Batal</a>
+                <input type="submit" class="btn btn-primary float-right"></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
 
 <!-- REQUIRED SCRIPTS -->
 @include('template.script')

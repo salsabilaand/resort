@@ -38,7 +38,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Riwayat Reservasi</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog-single.html">Logout</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>

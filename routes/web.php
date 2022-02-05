@@ -43,6 +43,7 @@ Route::get('/logout', ['as' => 'logout', function (){
 //route profil resort
 Route::get('/profile-resort', [App\Http\Controllers\CustomAuthController::class, 'profile'])->name('profile-resort');
 Route::post('/update-profile-resort/{id}', [App\Http\Controllers\CustomAuthController::class, 'update'])->name('update-profile-resort');
+Route::post('/update-password-pemilik-resort/{id}', [App\Http\Controllers\CustomAuthController::class, 'update_password'])->name('update-password-pemilik-resort');
 
 //Route Kamar
 Route::get('/data-kamar', [App\Http\Controllers\KamarController::class, 'index'])->name('data-kamar');
@@ -71,8 +72,5 @@ Route::get('/cetak-pemilik-resort', [App\Http\Controllers\DataPemilikResortContr
 
 //Route Pengunjung
 Route::get('/beranda-pengunjung', [App\Http\Controllers\PengunjungController::class, 'index'])->name('beranda-pengunjung');
-<<<<<<< HEAD
-Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung'); 
-=======
 Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung');
->>>>>>> 135b1a74472f93811208487eabddf985345e382f
+Route::get('/edit-akun-pengunjung', [App\Http\Controllers\PengunjungController::class, 'editAkun'])->name('edit-akun-pengunjung');
