@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Kamar;
 use Hash;
 use Session;
 
 class PengunjungController extends Controller
 {
     public function index(){
-        return view('dashboard-pengunjung');
+        return view('dashboard.dashboard-pengunjung');
     }
 
     public function editAkun(){
@@ -19,10 +20,6 @@ class PengunjungController extends Controller
         return view('pengunjung.edit-akun-pengunjung', compact('dtAkun'));
     }
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> d0ad8d151817b27e35336a91f3738459bc499ac8
     public function updateAkun(Request $request, $id)
     {
         $ubah = User::findorfail($id);
@@ -40,5 +37,15 @@ class PengunjungController extends Controller
     public function riwayatReservasi(){
         $dtReservasi = DB::select('select * from transaksi where id = ?', [session('loginId')]);
         return view('pengunjung.riwayat-reservasi-pengunjung', compact('dtReservasi'));
+    }
+
+    public function tampilPenginapan(){
+        $dtPenginapan = DB::select('select * from users where role = ?', ['1']);
+        return view('pengunjung.tampil-penginapan', compact('dtPenginapan'));
+    }
+
+    public function tampilKamarPenginapan($id){
+        $dtKamar = DB::select('select * from kamar where id_user = ?', [$id]);
+        return view('pengunjung.tampil-kamar-resort',compact('dtKamar'));
     }
 }

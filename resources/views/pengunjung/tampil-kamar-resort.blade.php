@@ -31,8 +31,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Beranda</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Penginapan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Beranda</a></li> 
+                            <li class="nav-item active"><a class="nav-link" href="accomodation.html">Penginapan</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
                                 <ul class="dropdown-menu">
@@ -47,54 +47,46 @@
             </div>
         </header>
         <!--================Header Area =================-->
+
         
-        <!--================Banner Area =================-->
-        <section class="banner_area">
-            <div class="booking_table d_flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h2>Desa Katupat</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
-					</div>
-				</div>
-            </div>
-        </section>
-        <!--================Banner Area =================-->
-        
-        <!--================ About History Area  =================-->
-        <section class="about_history_area section_gap">
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">Pulau Pangempa</h2>
-                            <p>Di Pulau Pangempa Anda dapat melakukan berbagai aktivitas seperti diving, snorkeling, tracking dan village tour. Anda juga dapat bersantai sambil menikmati pemandangan alam yang disuguhkan di pulau ini.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/foot1.jpg" alt="img">
-                    </div>
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle">Penginapan</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Penginapan</a></li>
+                    </ol>
                 </div>
             </div>
         </section>
-        <section class="about_history_area section_gap">
+        <!--================Breadcrumb Area =================-->
+
+        <!--================ Accomodation Area  =================-->
+        <section class="accomodation_area section_gap">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">Pulau Bolilanga</h2>
-                            <p>Di pulau ini wisatawan dapat melakukan aktivitas snorkeling, memancing menggunakan peahu nelayan dan juga melakukan hiking untuk mengamati kepiting kelapa. Pulau Bolilanga memiliki perairan yang jernih, sehingga wisatawan dapat bermain dan memotret ikan karang Togean yang berwarna-warni seperti ikan lionfish.</p>
+                <div class="section_title text-center">
+                    <h2 class="title_color">Pilihan Kamar</h2>
+                </div>
+                @foreach ($dtKamar as $item)
+                <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="{{asset('img/'.$item->image)}}" alt="">
+                                <a href="#" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <a href="#"><h4 class="sec_h4">{{$item->jenis_kamar}}</h4></a>
+                            <h5>{{$item->harga}}<small>/night</small></h5>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="pengunjung/image/foot2.jpg" alt="img">
-                    </div>
                 </div>
+                @endforeach
             </div>
         </section>
-        <!--================ About History Area  =================-->
-        
+        <!--================ Accomodation Area  =================-->
+
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
             <div class="container">
@@ -118,8 +110,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
-        
-        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="pengunjung/js/jquery-3.2.1.min.js"></script>
