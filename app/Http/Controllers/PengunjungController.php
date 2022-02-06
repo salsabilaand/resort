@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
+use App\Models\Transaksi;
 use Hash;
 use Session;
 
@@ -47,5 +48,33 @@ class PengunjungController extends Controller
     public function tampilKamarPenginapan($id){
         $dtKamar = DB::select('select * from kamar where id_user = ?', [$id]);
         return view('pengunjung.tampil-kamar-resort',compact('dtKamar'));
+    }
+
+    public function reservasi($id){
+        $dtKamar = DB::select('select * from kamar where id = ?', [$id]);
+        return view('pengunjung.reservasi',compact('dtKamar'));
+    }
+
+    public function inputReservasi(Request $request, $id){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+        ]);
+        $reservasi = new Transaksi();
+        $reservasi->nama = $request->nama;
+        $reservasi->email = $request->email;
+        $reservasi->telepon = $request->telepon;
+        $reservasi->catatan = $request->catatan;
+        $reservasi->tgl_masuk = $request->tgl_masuk;
+        $reservasi->tgl_keluar = $request->tgl_keluar;
+        $reservasi->id_user = session('loginId');
+        $reservasi->id_kamar = $id;
+        $reservasi->status = 'N';
+        $res = $reservasi->save();
+        if ($res) {
+            return view('pengunjung.tampil-penginapan')->with('success', 'You have registered Succesfuly');
+        }else{
+            return view('dashboard.dashboard-pengunjung')->with('fail', 'Something wrong');
+        }
     }
 }

@@ -63,29 +63,61 @@
         </section>
         <!--================Breadcrumb Area =================-->
 
-        <!--================ Accomodation Area  =================-->
-        <section class="accomodation_area section_gap">
+        <div class="whole-wrap">
             <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Pilihan Kamar</h2>
-                </div>
-                @foreach ($dtKamar as $item)
-                <div class="row mb_30">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
-                            <div class="hotel_img">
-                                <img src="{{asset('img/'.$item->image)}}" alt="">
-                                <a href="{{route('reservasi',$item->id)}}" class="btn theme_btn button_hover">Book Now</a>
-                            </div>
-                            <a href="#"><h4 class="sec_h4">{{$item->jenis_kamar}}</h4></a>
-                            <h5>{{$item->harga}}<small>/night</small></h5>
+                <div class="section-top-border">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <h3 class="mb-30 title_color">Form Element</h3>
+                            @foreach ($dtKamar as $item)
+                            <form action="{{route('reservasi-proses', $item->id)}}" method="POST">
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">{{Session::get('success')}}</div>
+                                @endif
+                                @if(Session::has('fail'))
+                                <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                                @endif
+                                @csrf
+                                <div class="form-group first">
+                                    <label for="nama">Name</label>
+                                    <input type="text" name="nama" value="{{old('nama')}}" id="nama" class="form-control">
+                                    <span class="text-danger">@error('nama') {{$message}} @enderror</span>
+                                </div>
+                                <div class="form-group first">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" value="{{old('email')}}" id="email"  class="form-control">
+                                    <span class="text-danger">@error('email') {{$message}} @enderror</span>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="telepon">Telepon</label>
+                                    <input type="text" name="telepon" value="{{old('telepon')}}" id="telepon" class="form-control">
+                                    <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="catatan">Catatan</label>
+                                    <input type="text" name="catatan" value="{{old('catatan')}}" id="catatan" class="form-control">
+                                    <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                      <label for="tgl_masuk">Tanggal Check In</label>
+                                      <input required type="date" id="tgl_masuk" name="tgl_masuk" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                      <label for="tgl_keluar">Tanggal Check Out</label>
+                                      <input required type="date" id="tgl_keluar" name="tgl_keluar" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="button-group-area">
+                                    <input type="submit" class="genric-btn success"></button>
+                                </div>
+                            </form>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                @endforeach
             </div>
-        </section>
-        <!--================ Accomodation Area  =================-->
+        </div>
 
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">

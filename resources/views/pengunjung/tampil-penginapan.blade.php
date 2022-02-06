@@ -68,8 +68,8 @@
                 <div class="section_title text-center">
                     <h2 class="title_color">Resort Yang Tersedia</h2>
                 </div>
-                @foreach ($dtPenginapan as $item)
                 <div class="row mb_30">
+                    @foreach ($dtPenginapan as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="single-recent-blog-post">
                             <div class="thumb">
@@ -81,8 +81,8 @@
                             </div>	
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
         </section>
         <!--================ Recent Area  =================-->

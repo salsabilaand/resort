@@ -77,3 +77,5 @@ Route::post('/edit-proses-akun-pengunjung/{id}', [App\Http\Controllers\Pengunjun
 Route::get('/riwayat-reservasi-pengunjung', [App\Http\Controllers\PengunjungController::class, 'riwayatReservasi'])->name('riwayat-reservasi-pengunjung');
 Route::get('/tampil-penginapan', [App\Http\Controllers\PengunjungController::class, 'tampilPenginapan'])->name('tampil-penginapan');
 Route::get('/tampil-kamar-resort/{id}', [App\Http\Controllers\PengunjungController::class, 'tampilKamarPenginapan'])->name('tampil-kamar-resort');
+Route::get('/reservasi/{id}', [App\Http\Controllers\PengunjungController::class, 'reservasi'])->name('reservasi');
+Route::post('/reservasi-proses/{id}', [App\Http\Controllers\PengunjungController::class, 'inputReservasi'])->name('reservasi-proses');
