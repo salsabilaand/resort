@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Wisata Desa Katupat</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="pengunjung/css/bootstrap.css">
-        <link rel="stylesheet" href="pengunjung/vendors/linericon/style.css">
-        <link rel="stylesheet" href="pengunjung/css/font-awesome.min.css">
-        <link rel="stylesheet" href="pengunjung/vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="pengunjung/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
-        <link rel="stylesheet" href="pengunjung/vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="pengunjung/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{asset('pengunjung/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/vendors/linericon/style.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/vendors/owl-carousel/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/vendors/nice-select/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/vendors/owl-carousel/owl.carousel.min.css')}}">
         <!-- main css -->
-        <link rel="stylesheet" href="pengunjung/css/style.css">
-        <link rel="stylesheet" href="pengunjung/css/responsive.css">
+        <link rel="stylesheet" href="{{asset('pengunjung/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('pengunjung/css/responsive.css')}}">
     </head>
     <body>
         <!--================Header Area =================-->
@@ -112,17 +112,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
 		<!--================ End footer Area  =================-->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="pengunjung/js/jquery-3.2.1.min.js"></script>
-        <script src="pengunjung/js/popper.js"></script>
-        <script src="pengunjung/js/bootstrap.min.js"></script>
-        <script src="pengunjung/vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="pengunjung/js/jquery.ajaxchimp.min.js"></script>
-        <script src="pengunjung/js/mail-script.js"></script>
-        <script src="pengunjung/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
-        <script src="pengunjung/vendors/nice-select/js/jquery.nice-select.js"></script>
-        <script src="pengunjung/js/mail-script.js"></script>
-        <script src="pengunjung/js/stellar.js"></script>
-        <script src="pengunjung/vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="pengunjung/js/custom.js"></script>
+        <script src="{{asset('pengunjung/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{asset('pengunjung/js/popper.js')}}"></script>
+        <script src="{{asset('pengunjung/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('pengunjung/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('pengunjung/js/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('pengunjung/js/mail-script.js')}}"></script>
+        <script src="{{asset('pengunjung/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js')}}"></script>
+        <script src="{{asset('pengunjung/vendors/nice-select/js/jquery.nice-select.js')}}"></script>
+        <script src="{{asset('pengunjung/js/mail-script.js')}}"></script>
+        <script src="{{asset('pengunjung/js/stellar.js')}}"></script>
+        <script src="{{asset('pengunjung/vendors/lightbox/simpleLightbox.min.js')}}"></script>
+        <script src="{{asset('pengunjung/js/custom.js')}}"></script>
     </body>
 </html>
