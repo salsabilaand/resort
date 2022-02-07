@@ -17,7 +17,7 @@ class CreateTransaksisTable extends Migration
             $table->id();
             $table->integer('harga');
             $table->string('nama');
-            $table->integer('telepon');
+            $table->string('telepon');
             $table->string('email');
             $table->bigInteger('id_user');
             $table->bigInteger('id_kamar');

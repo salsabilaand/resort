@@ -74,9 +74,9 @@ class PengunjungController extends Controller
         $reservasi->id_kamar = $id;
         $res = $reservasi->save();
         if ($res) {
-            return view('pengunjung.riwayat-reservasi-pengunjung')->with('success', 'Succesfuly');
+            return back()->with('success', 'Succesfuly! Please go to reservation history menu to see details');
         }else{
-            return view('pengunjung.riwayat-reservasi-pengunjung')->with('fail', 'Something wrong');
+            return back()->with('fail', 'Something wrong');
         }
     }
 }
