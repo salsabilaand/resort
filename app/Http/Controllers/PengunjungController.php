@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Transaksi;
+use Carbon\Carbon;
 use Hash;
 use Session;
 
@@ -36,7 +37,7 @@ class PengunjungController extends Controller
     }
 
     public function riwayatReservasi(){
-        $dtReservasi = DB::select('select * from transaksi where id = ?', [session('loginId')]);
+        $dtReservasi = DB::select('select * from transaksi where id_user = ?', [session('loginId')]);
         return view('pengunjung.riwayat-reservasi-pengunjung', compact('dtReservasi'));
     }
 
@@ -56,25 +57,26 @@ class PengunjungController extends Controller
     }
 
     public function inputReservasi(Request $request, $id){
-        $request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-        ]);
+        // $price = DB::select('select * from kamar where id = ?', [$id]);
+        $price = Kamar::find($id);
+        $durasi = Carbon::parse($request->tgl_masuk)->diffInDays($request->tgl_keluar);
+
         $reservasi = new Transaksi();
+        $reservasi->harga =  $price->harga * $durasi;
         $reservasi->nama = $request->nama;
-        $reservasi->email = $request->email;
         $reservasi->telepon = $request->telepon;
-        $reservasi->catatan = $request->catatan;
+        $reservasi->email = $request->email;
         $reservasi->tgl_masuk = $request->tgl_masuk;
         $reservasi->tgl_keluar = $request->tgl_keluar;
+        $reservasi->catatan = $request->catatan;
         $reservasi->id_user = session('loginId');
+        $reservasi->status = 'Request';
         $reservasi->id_kamar = $id;
-        $reservasi->status = 'N';
         $res = $reservasi->save();
         if ($res) {
-            return view('pengunjung.tampil-penginapan')->with('success', 'You have registered Succesfuly');
+            return view('pengunjung.riwayat-reservasi-pengunjung')->with('success', 'Succesfuly');
         }else{
-            return view('dashboard.dashboard-pengunjung')->with('fail', 'Something wrong');
+            return view('pengunjung.riwayat-reservasi-pengunjung')->with('fail', 'Something wrong');
         }
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
-use App\Models\Kamar;
+// use App\Models\Kamar;
 
 class TransaksiController extends Controller
 {
@@ -26,8 +26,9 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        $kmr = Kamar::all();
-        return view('transaksi.input-transaksi', compact('kmr'));
+        // $kmr = Kamar::all();
+        // return view('transaksi.input-transaksi', compact('kmr'));
+        return view('transaksi.input-transaksi');
     }
 
     /**
@@ -73,9 +74,11 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        $kmr = Kamar::all();
-        $dt = Transaksi::with('kamar')->findorfail($id);
-        return view('transaksi.edit-transaksi',compact('dt', 'kmr'));
+        // $kmr = Kamar::all();
+        // $dt = Transaksi::with('kamar')->findorfail($id);
+        $dt = Transaksi::all()->findorfail($id);
+        return view('transaksi.edit-transaksi',compact('dt'));
+        // return view('transaksi.edit-transaksi',compact('dt', 'kmr'));
     }
 
     /**

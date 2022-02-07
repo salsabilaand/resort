@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="{{asset('pengunjung/css/responsive.css')}}">
     </head>
     <body>
-
         <!--================Header Area =================-->
         <header class="header_area">
             <div class="container">
@@ -33,11 +32,11 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Beranda</a></li> 
-                            <li class="nav-item active"><a class="nav-link" href="accomodation.html">Penginapan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Penginapan</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('riwayat-reservasi-pengunjung')}}">Riwayat Reservasi</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">Logout</a></li>
                                 </ul>
@@ -48,15 +47,16 @@
             </div>
         </header>
         <!--================Header Area =================-->
-        
+
         <!--================Breadcrumb Area =================-->
-        <section class="breadcrumb_area">
+        <section class="breadcrumb_area blog_banner_two">
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle">Penginapan</h2>
+                    <h2 class="page-cover-tittle f_48">Pengaturan Akun</h2>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Penginapan</a></li>
+                            <li><a href="index.html">Akun</a></li>
+                            <li class="active">Riwayat Reservasi</li>
                     </ol>
                 </div>
             </div>
@@ -66,54 +66,31 @@
         <div class="whole-wrap">
             <div class="container">
                 <div class="section-top-border">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <h3 class="mb-30 title_color">Form Element</h3>
-                            @foreach ($dtKamar as $item)
-                            <form action="{{route('reservasi-proses', $item->id)}}" method="POST">
-                                @if(Session::has('success'))
-                                <div class="alert alert-success">{{Session::get('success')}}</div>
-                                @endif
-                                @if(Session::has('fail'))
-                                <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                                @endif
-                                @csrf
-                                <div class="form-group first">
-                                    <label for="nama">Name</label>
-                                    <input type="text" name="nama" value="{{old('nama')}}" id="nama" class="form-control">
-                                    <span class="text-danger">@error('nama') {{$message}} @enderror</span>
-                                </div>
-                                <div class="form-group first">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" value="{{old('email')}}" id="email"  class="form-control">
-                                    <span class="text-danger">@error('email') {{$message}} @enderror</span>
-                                </div>
-                                <div class="form-group last mb-4">
-                                    <label for="telepon">Telepon</label>
-                                    <input type="text" name="telepon" value="{{old('telepon')}}" id="telepon" class="form-control">
-                                    <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
-                                </div>
-                                <div class="form-group last mb-4">
-                                    <label for="catatan">Catatan</label>
-                                    <input type="text" name="catatan" value="{{old('catatan')}}" id="catatan" class="form-control">
-                                    <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                      <label for="tgl_masuk">Tanggal Check In</label>
-                                      <input required type="date" id="tgl_masuk" name="tgl_masuk" class="form-control">
-                                      <span class="text-danger">@error('tgl_masuk') {{$message}} @enderror</span>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                      <label for="tgl_keluar">Tanggal Check Out</label>
-                                      <input required type="date" id="tgl_keluar" name="tgl_keluar" class="form-control">
-                                      <span class="text-danger">@error('tgl_keluar') {{$message}} @enderror</span>
-                                    </div>
-                                </div>
-                                <div class="button-group-area">
-                                    <input type="submit" class="genric-btn success"></button>
-                                </div>
-                            </form>
+                    <h3 class="mb-30 title_color">Riwayat Reservasi</h3>
+                    <div class="progress-table-wrap">
+                        <div class="progress-table">
+                            <div class="table-head">
+                                <div class="serial">No.</div>
+                                <div class="serial">Name</div>
+                                <div class="serial">Phone</div>
+                                <div class="serial">Check In</div>
+                                <div class="serial">Check Out</div>
+                                <div class="serial">Note</div>
+                                <div class="serial">Total</div>
+                                <div class="serial">Status</div>
+                            </div>
+                            <?php $no = 1 ?>
+                            @foreach ($dtReservasi as $item)
+                            <div class="table-row">
+                                <div class="serial">{{$no++}}</div>
+                                <div class="serial">{{$item->nama}}</div>
+                                <div class="serial">{{$item->telepon}}</div>
+                                <div class="serial">{{$item->tgl_masuk}}</div>
+                                <div class="serial">{{$item->tgl_keluar}}</div>
+                                <div class="serial">{{$item->catatan}}</div>
+                                <div class="serial">{{$item->harga}}</div>
+                                <div class="serial">{{$item->status}}</div>
+                            </div>
                             @endforeach
                         </div>
                     </div>

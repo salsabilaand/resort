@@ -11,10 +11,10 @@ class Kamar extends Model
     protected $table = "kamar";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'jenis_kamar', 'image', 'tipe_kamar', 'harga', 'deskripsi'
+        'id', 'id_user', 'jenis_kamar', 'image', 'tipe_kamar', 'harga', 'deskripsi'
     ];
 
-    public function transaksi(){
-        return $this->hasMany(Transaksi::class);
-    }
+    // public function transaksi(){
+    //     return $this->hasMany(Transaksi::class);
+    // }
 }

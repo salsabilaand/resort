@@ -11,10 +11,6 @@ class Transaksi extends Model
     protected $table = "transaksi";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'kamar_id', 'harga', 'nama', 'telepon', 'email', 'tgl_masuk', 'tgl_keluar', 'jml_tamu', 'catatan'
+        'id', 'harga', 'nama', 'telepon', 'email', 'tgl_masuk', 'tgl_keluar', 'catatan', 'id_user', 'status', 'id_kamar'
     ];
-
-    public function kamar(){
-        return $this->belongsTo(Kamar::class);
-    }
 }
