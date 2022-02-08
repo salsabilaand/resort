@@ -31,13 +31,18 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Beranda</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Penginapan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{route('riwayat-reservasi-pengunjung')}}">Riwayat Reservasi</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Home</a></li> 
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservation</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Booking Resort</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('riwayat-reservasi-pengunjung')}}">Reservation History</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">My Profile</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             </li>
@@ -55,7 +60,7 @@
 				<div class="container">
 					<div class="banner_content text-center">
 						<h2>Desa Katupat</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
+						<p>Katupat Village is one of the villages in Togean District, Tojo Una-Una Regency, Central Sulawesi Province, Indonesia.</p>
 					</div>
 				</div>
             </div>
@@ -68,8 +73,8 @@
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">Pulau Pangempa</h2>
-                            <p>Di Pulau Pangempa Anda dapat melakukan berbagai aktivitas seperti diving, snorkeling, tracking dan village tour. Anda juga dapat bersantai sambil menikmati pemandangan alam yang disuguhkan di pulau ini.</p>
+                            <h2 class="title title_color">Karina Beach</h2>
+                            <p>Dari kejauhan air laut di tepi pantai karina terlihat sangat jernih dan bersih sehingga terumbu karang bisa terlihat dengan jelas. Warna air lautnya seperti hijau tosca serta hamparan pasir putih akan membius setiap traveller yang mengunjunginya.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -83,8 +88,8 @@
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">Pulau Bolilanga</h2>
-                            <p>Di pulau ini wisatawan dapat melakukan aktivitas snorkeling, memancing menggunakan peahu nelayan dan juga melakukan hiking untuk mengamati kepiting kelapa. Pulau Bolilanga memiliki perairan yang jernih, sehingga wisatawan dapat bermain dan memotret ikan karang Togean yang berwarna-warni seperti ikan lionfish.</p>
+                            <h2 class="title title_color">California Reef </h2>
+                            <p>Di California Reef Anda bisa melakukan snorkeling untuk menikmati keindahan bawah air yang dimiliki. Saat snorkeling Anda akan menemukan berbagai mavam biota laut dan terumbu karang yang menjadi tujuan utama para wisatawan untuk menyelam.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -101,8 +106,8 @@
                 <div class="row">
                     <div class="col-lg-8  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">Tentang</h6>
-                            <p>Desa Katupat adalah salah satu desa di Kecamatan Togean, Kabupaten Tojo Una-Una, Provinsi Sulawesi Tengah, Indonesia.</p>
+                            <h6 class="footer_title">About Us</h6>
+                            <p>Katupat Village is one of the villages in Togean District, Tojo Una-Una Regency, Central Sulawesi Province, Indonesia.</p>
                         </div>
                     </div>											
                 </div>

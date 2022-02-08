@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->nullable();
             $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
+            $table->text('link_yt')->nullable();
             $table->timestamps();
         });
     }

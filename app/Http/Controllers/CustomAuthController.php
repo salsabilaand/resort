@@ -84,6 +84,7 @@ class CustomAuthController extends Controller
             'photo'         => $namaFile,
             'alamat'        => $request['alamat'],
             'deskripsi'     => $request['deskripsi'],
+            'link_yt'       => $request['link_yt']
         ];
         
         if ($request->hasFile('photo')) {

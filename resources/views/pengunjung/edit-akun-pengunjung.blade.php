@@ -31,13 +31,18 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Beranda</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Penginapan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{route('riwayat-reservasi-pengunjung')}}">Riwayat Reservasi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{route('beranda-pengunjung')}}">Home</a></li> 
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservation</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item active"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">Pengaturan Akun</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('tampil-penginapan')}}">Booking Resort</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('riwayat-reservasi-pengunjung')}}">Reservation History</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item active"><a class="nav-link" href="{{route('edit-akun-pengunjung')}}">My Profile</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             </li>
@@ -53,10 +58,10 @@
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle f_48">Pengaturan Akun</h2>
+                    <h2 class="page-cover-tittle f_48">My Profile</h2>
                     <ol class="breadcrumb">
-                            <li><a href="index.html">Akun</a></li>
-                            <li class="active">Pengaturan Akun</li>
+                            <li><a href="#">My Account</a></li>
+                            <li class="active">My Profile</li>
                     </ol>
                 </div>
             </div>
@@ -108,8 +113,8 @@
                 <div class="row">
                     <div class="col-lg-8  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">Tentang</h6>
-                            <p>Desa Katupat adalah salah satu desa di Kecamatan Togean, Kabupaten Tojo Una-Una, Provinsi Sulawesi Tengah, Indonesia.</p>
+                            <h6 class="footer_title">About Us</h6>
+                            <p>Katupat Village is one of the villages in Togean District, Tojo Una-Una Regency, Central Sulawesi Province, Indonesia.</p>
                         </div>
                     </div>											
                 </div>

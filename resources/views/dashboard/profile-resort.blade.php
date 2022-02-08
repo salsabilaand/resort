@@ -76,6 +76,10 @@
                 <input type="text" id="deskripsi" name="deskripsi" class="form-control" height="20px" value="{{$item->deskripsi}}">
               </div>
               <div class="form-group">
+                <label>Link Youtube Profil Resort</label>
+                <input type="text" id="link_yt" name="link_yt" class="form-control" height="20px" value="{{$item->link_yt}}">
+              </div>
+              <div class="form-group">
                 <a href="{{route('profile-resort')}}" class="btn btn-danger float-right">Batal</a>
                 <input type="submit" class="btn btn-primary float-right"></button>
               </div>
