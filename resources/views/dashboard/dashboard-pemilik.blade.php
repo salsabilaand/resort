@@ -19,55 +19,20 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+      <div class="container-fluid"><br><br><br><br><br>
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <br><br><br>
+          <div class="col-sm-12">
+            <center><h1 class="m-0">Selamat Datang</h1></center>
           </div>
+          <div class="col-sm-12">
+            <center><h1 class="m-0 text-dark"><b>Website Desa Wisata dan Reservasi Resort</b></h1></center>
+            <center><h1 class="m-0 text-dark"><b>Pada Desa Katupat, Tojo Una-Una, Sulawesi Tengah</b></h1></center>
+            </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>
-                  3
-                </h3>
-
-                <p>Data Kamar</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-cube"></i>
-              </div>
-              <a href="{{route('data-kamar')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-              <h3>
-              5
-              </h3>
-
-                <p>Data Transaksi</p>
-              </div>
-              <div class="icon">
-              <i class="fas fa-user-friends"></i>
-              </div>
-              <a href="{{route('data-transaksi')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-        </div>
           
 <!-- REQUIRED SCRIPTS -->
 @include('template.script')

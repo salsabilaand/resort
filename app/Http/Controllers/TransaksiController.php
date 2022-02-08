@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Transaksi;
 // use App\Models\Kamar;
 
@@ -15,7 +16,14 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(2);
+        // $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(2);
+        // $dtTransaksi = Transaksi::all();
+        $dtTransaksi = DB::table('transaksi')
+            ->where([
+                ['id_resort', [session('loginId')]],
+                ['status', 'Request']
+            ])->get();
+        // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
         return view('transaksi.data-transaksi', compact('dtTransaksi'));
     }
 
@@ -76,9 +84,19 @@ class TransaksiController extends Controller
     {
         // $kmr = Kamar::all();
         // $dt = Transaksi::with('kamar')->findorfail($id);
-        $dt = Transaksi::all()->findorfail($id);
+        $dt = Transaksi::findorfail($id);
         return view('transaksi.edit-transaksi',compact('dt'));
         // return view('transaksi.edit-transaksi',compact('dt', 'kmr'));
+    }
+
+    public function laporan(){
+        $dtTransaksi = DB::table('transaksi')
+            ->where([
+                ['id_resort', [session('loginId')]],
+                ['status', ['Rejected','Completed']]
+            ])->get();
+        // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
+        return view('transaksi.laporan-transaksi', compact('dtTransaksi'));
     }
 
     /**
@@ -90,18 +108,10 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ubah = Transaksi::findorfail($id);
+        $ubah = Transaksi::findOrFail($id);
 
         $dt = [
-            'nama'              => $request['nama'],
-            'telepon'           => $request['telepon'],
-            'email'             => $request['email'],
-            'kamar_id'          => $request['kamar_id'],
-            'tgl_masuk'         => $request['tgl_masuk'],
-            'tgl_keluar'        => $request['tgl_keluar'],
-            'jml_tamu'          => $request['jml_tamu'],
-            'harga'             => $request['harga'],
-            'catatan'           => $request['catatan'],
+            'status'            => $request['status']
         ];
 
         $ubah->update($dt);

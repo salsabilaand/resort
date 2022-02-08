@@ -60,6 +60,7 @@ Route::post('/input-proses-transaksi', [App\Http\Controllers\TransaksiController
 Route::get('/edit-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'edit'])->name('edit-transaksi');
 Route::post('/edit-proses-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('edit-proses-transaksi');
 Route::get('/hapus-transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('hapus-transaksi');
+Route::get('/laporan-transaksi', [App\Http\Controllers\TransaksiController::class, 'laporan'])->name('laporan-transaksi');
 
 //Route Admin
 Route::get('/data-pemilik-resort', [App\Http\Controllers\DataPemilikResortController::class, 'index'])->name('data-pemilik-resort');

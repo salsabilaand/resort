@@ -44,7 +44,6 @@
               <th>Tarif</th>
               <th>Catatan Tambahan</th>
               <th>Status</th>
-              <th>Aksi</th>
             </tr>
             <?php $no = 1 ?>
             @foreach ($dtTransaksi as $item)
@@ -59,10 +58,6 @@
               <th>{{$item->harga}}</th>
               <th>{{$item->catatan}}</th>
               <th>{{$item->status}}</th>
-              <th>
-                <a href="{{route('edit-transaksi',$item->id)}}"><i class="fas fa-edit"></i></a> |
-                <a href="{{route('hapus-transaksi',$item->id)}}"><i class="fas fa-trash-alt" style="color: red" onclick="return confirm('Apakah Yakin Akan Menghapus Data?')"></i></a>
-              </th>
             </tr>
             @endforeach
           </table>

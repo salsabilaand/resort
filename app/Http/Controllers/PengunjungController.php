@@ -72,6 +72,7 @@ class PengunjungController extends Controller
         $reservasi->id_user = session('loginId');
         $reservasi->status = 'Request';
         $reservasi->id_kamar = $id;
+        $reservasi->id_resort = $price->id_user;
         $res = $reservasi->save();
         if ($res) {
             return back()->with('success', 'Succesfuly! Please go to reservation history menu to see details');

@@ -12,19 +12,11 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{route('profile-resort')}}" class="nav-link active">
+          <li class="nav-item">
+            <a href="{{route('profile-resort')}}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
               Profile
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('dashboard-pemilik')}}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-               Dashboard
               </p>
             </a>
           </li>
@@ -40,23 +32,15 @@
             <a href="{{route('data-transaksi')}}" class="nav-link">
               <i class="nav-icon fas fa-clipboard-check"></i>
               <p>
-              Data Transaksi
+              Konfirmasi Reservasi
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('laporan-transaksi')}}" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
-              Laporan Bulanan
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-file-alt"></i>
-              <p>
-              Laporan Tahunan
+              Laporan Reservasi
               </p>
             </a>
           </li>
