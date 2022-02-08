@@ -74,22 +74,22 @@ class CustomAuthController extends Controller
     public function update(Request $request, $id)
     {
         $ubah = User::findorfail($id);
-        $nm = $request->photo;
-        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); 
 
         $user = [
             'nama_resort'   => $request['nama_resort'],
             'name'          => $request['name'],
             'email'         => $request['email'],
-            'photo'         => $namaFile,
             'alamat'        => $request['alamat'],
             'deskripsi'     => $request['deskripsi'],
             'link_yt'       => $request['link_yt']
         ];
+
+        $photo = $request->file('photo');
         
-        if ($request->hasFile('photo')) {
-            $photo = $request->file('photo');
-            $request->photo->move('img/', $namaFile);
+        if ($photo) {
+            $namaFile = $photo->getClientOriginalName(); 
+            $user['photo'] = $namaFile;
+            $proses = $photo->move('img/', $namaFile);
         }
 
         $ubah->update($user);
