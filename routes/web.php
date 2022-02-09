@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\DashboardPemilikController;
+use App\Http\Controllers\KontenBerandaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,14 @@ Route::post('/input-proses-kamar', [App\Http\Controllers\KamarController::class,
 Route::get('/edit-kamar/{id}', [App\Http\Controllers\KamarController::class, 'edit'])->name('edit-kamar');
 Route::post('/edit-proses-kamar/{id}', [App\Http\Controllers\KamarController::class, 'update'])->name('edit-proses-kamar');
 Route::get('/hapus-kamar/{id}', [App\Http\Controllers\KamarController::class, 'destroy'])->name('hapus-kamar');
+
+//Route Konten Beranda
+Route::get('/data-konten-beranda', [App\Http\Controllers\KontenBerandaController::class, 'index'])->name('data-konten-beranda');
+Route::get('/input-konten-beranda', [App\Http\Controllers\KontenBerandaController::class, 'create'])->name('input-konten-beranda');
+Route::post('/input-proses-konten-beranda', [App\Http\Controllers\KontenBerandaController::class, 'store'])->name('input-proses-konten-beranda');
+Route::get('/edit-konten-beranda/{id}', [App\Http\Controllers\KontenBerandaController::class, 'edit'])->name('edit-konten-beranda');
+Route::post('/edit-proses-konten-beranda/{id}', [App\Http\Controllers\KontenBerandaController::class, 'update'])->name('edit-proses-konten-beranda');
+Route::get('/hapus-konten-beranda/{id}', [App\Http\Controllers\KontenBerandaController::class, 'destroy'])->name('hapus-konten-beranda');
 
 //Route Transaksi
 Route::get('/data-transaksi', [App\Http\Controllers\TransaksiController::class, 'index'])->name('data-transaksi');

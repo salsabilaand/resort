@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\KontenBeranda;
 
 use Illuminate\Http\Request;
-use App\Models\Kamar;
-use Illuminate\Support\Facades\DB;
 
-class KamarController extends Controller
+class KontenBerandaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class KamarController extends Controller
      */
     public function index()
     {
-        $dtKamar = DB::select('select * from kamar where id_user = ?', [session('loginId')]);
-        // $dtKamar = Kamar::all();
-        return view('kamar.data-kamar', compact('dtKamar'));
+        $dtKonten = KontenBeranda::all();
+        return view('admin.data-konten-beranda', compact('dtKonten'));
     }
 
     /**
@@ -27,7 +25,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        return view('kamar.input-kamar');
+        return view('admin.input-konten-beranda');
     }
 
     /**
@@ -42,18 +40,16 @@ class KamarController extends Controller
         $nm = $request->image;
         $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); //memberi nama file dengan nomor acak
 
-        $dtUpload = new Kamar;
-        $dtUpload->id_user      = session('loginId');
-        $dtUpload->jenis_kamar  = $request->jenis_kamar;
-        $dtUpload->image        = $namaFile;
-        $dtUpload->tipe_kamar   = $request->tipe_kamar;
-        $dtUpload->harga        = $request->harga;
-        $dtUpload->deskripsi    = $request->deskripsi;
+        $dtUpload = new KontenBeranda;
+        // $dtUpload->id_user      = session('loginId');
+        $dtUpload->judul_konten         = $request->judul_konten;
+        $dtUpload->deskripsi_konten     = $request->deskripsi_konten;
+        $dtUpload->image                = $namaFile;
 
         $nm->move('img/', $namaFile);
         $dtUpload->save();
         
-        return redirect('data-kamar');
+        return redirect('data-konten-beranda');
     }
 
     /**
@@ -75,8 +71,8 @@ class KamarController extends Controller
      */
     public function edit($id)
     {
-        $dt = Kamar::findorfail($id);
-        return view('kamar.edit-kamar',compact('dt'));
+        $dt = KontenBeranda::findorfail($id);
+        return view('admin.edit-konten-beranda',compact('dt'));
     }
 
     /**
@@ -88,15 +84,13 @@ class KamarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ubah = Kamar::findorfail($id);
+        $ubah = KontenBeranda::findorfail($id);
         $awal = $ubah->image;
 
         $dt = [
-            'jenis_kamar'   => $request['jenis_kamar'],
-            'image'         => $awal,
-            'tipe_kamar'    => $request['tipe_kamar'],
-            'harga'         => $request['harga'],
-            'deskripsi'     => $request['deskripsi'],
+            'judul_konten'          => $request['judul_konten'],
+            'deskripsi_konten'      => $request['deskripsi_konten'],
+            'image'                 => $awal,
         ];
         
         if ($request->hasFile('image')) {
@@ -106,7 +100,7 @@ class KamarController extends Controller
         }
 
         $ubah->update($dt);
-        return redirect('data-kamar');
+        return redirect('data-konten-beranda');
     }
 
     /**
@@ -118,7 +112,7 @@ class KamarController extends Controller
     public function destroy($id)
     {
         // dd($id);
-        $hapus = Kamar::findorfail($id);
+        $hapus = KontenBeranda::findorfail($id);
 
         $file = ('img/').$hapus->image;
         //cek jika ada gambar

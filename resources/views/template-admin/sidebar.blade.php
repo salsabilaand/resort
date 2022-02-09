@@ -5,7 +5,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="" class="d-block">Halo, <b>{{session('loginName')}}</b></a>
+          <a href="#" class="d-block">Halo, <b>{{session('loginName')}}</b></a>
         </div>
       </div>
 
@@ -13,20 +13,21 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-               Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{route('data-pemilik-resort')}}" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                Data Pemilik Resort
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('data-konten-beranda')}}" class="nav-link">
+              <i class="nav-icon fas fa-archway"></i>
+              <p>
+               Data Tempat Wisata
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{route('logout')}}" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>

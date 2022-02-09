@@ -71,30 +71,17 @@
         <section class="about_history_area section_gap">
             <div class="container">
                 <div class="row">
+                    @foreach ($dtKonten as $item)
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">Karina Beach</h2>
-                            <p>Dari kejauhan air laut di tepi pantai karina terlihat sangat jernih dan bersih sehingga terumbu karang bisa terlihat dengan jelas. Warna air lautnya seperti hijau tosca serta hamparan pasir putih akan membius setiap traveller yang mengunjunginya.</p>
+                            <h2 class="title title_color">{{$item->judul_konten}}</h2>
+                            <p>{{$item->deskripsi_konten}}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img class="img-fluid" src="{{asset('pengunjung/image/foot1.jpg')}}" alt="img">
+                        <img class="img-fluid" src="{{asset('img/'.$item->image)}}" alt="img">
                     </div>
-                </div>
-            </div>
-        </section>
-        <section class="about_history_area section_gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">California Reef </h2>
-                            <p>Di California Reef Anda bisa melakukan snorkeling untuk menikmati keindahan bawah air yang dimiliki. Saat snorkeling Anda akan menemukan berbagai mavam biota laut dan terumbu karang yang menjadi tujuan utama para wisatawan untuk menyelam.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="{{asset('pengunjung/image/foot2.jpg')}}" alt="img">
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
