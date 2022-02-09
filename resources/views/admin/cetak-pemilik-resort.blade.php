@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="form-group">
-            <p align="center"><b>Data Pemilik Resort</b></p>
+            <h3 align="center"><b>Data Pemilik Resort</b></h3>
             <table class="static" align="center" rules="all" border="1px" style="width: 95%;">
                 <tr>
                     <th>No</th>

@@ -21,7 +21,7 @@ class TransaksiController extends Controller
         $dtTransaksi = DB::table('transaksi')
             ->where([
                 ['id_resort', [session('loginId')]],
-                ['status', 'Request']
+                ['status', ['Request' OR 'Accepted']]
             ])->get();
         // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
         return view('transaksi.data-transaksi', compact('dtTransaksi'));
@@ -90,10 +90,14 @@ class TransaksiController extends Controller
     }
 
     public function laporan(){
+        $array = ['Rejected', 'Accepted'];
+
+// User::whereIn('users.id',  $array)->get();
+
         $dtTransaksi = DB::table('transaksi')
             ->where([
                 ['id_resort', [session('loginId')]],
-                ['status', ['Rejected','Completed']]
+                ['status', $array]
             ])->get();
         // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
         return view('transaksi.laporan-transaksi', compact('dtTransaksi'));
@@ -111,7 +115,7 @@ class TransaksiController extends Controller
         $ubah = Transaksi::findOrFail($id);
 
         $dt = [
-            'status'            => $request['status']
+            'status' => $request['status']
         ];
 
         $ubah->update($dt);
@@ -131,5 +135,12 @@ class TransaksiController extends Controller
         //hapus data drai db
         $hapus->delete();
         return back();
+    }
+
+    public function cetak()
+    {
+        $cetakTransaksi = DB::select('select * from users where role = ?', ['1']);
+        // $cetakTransaksi = DB::select('select * from transaksi where id_user = ?', [session('loginId')]);
+        return view('transaksi.cetak-laporan-transaksi', compact('cetakTransaksi'));
     }
 }

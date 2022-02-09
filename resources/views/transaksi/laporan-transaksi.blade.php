@@ -31,6 +31,12 @@
     <!-- Main content -->
     <section class="content">
       <div class="card card-info card-outline">
+        <div class="card-header">
+          <div class="card-tools">
+            <a href="{{route('cetak-laporan-transaksi')}}" target="_blank" class="btn btn-primary float-left">Cetak  <i class="fas fa-print"></i></a>
+          </div>
+        </div>
+
         <div class="card-body">
           <table class="table table-bordered">
             <tr>
@@ -62,13 +68,8 @@
             @endforeach
           </table>
         </div>
-        <!-- membuat paginate -->
-          {{-- Current Page: {{ $dtTransaksi->currentPage() }}<br>
-          Jumlah Data: {{ $dtTransaksi->total() }}<br>
-          Data perhalaman: {{ $dtTransaksi->perPage() }}<br>
-          <br>
-          {{$dtTransaksi->links()}} --}}
       </div>
+    </section>
 
 <!-- REQUIRED SCRIPTS -->
 @include('template.script')

@@ -75,8 +75,8 @@
                 <div class="section_title text-center">
                     <h2 class="title_color">Pilihan Kamar</h2>
                 </div>
-                @foreach ($dtKamar as $item)
                 <div class="row mb_30">
+                    @foreach ($dtKamar as $item)
                     <div class="col-lg-3 col-sm-6">
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
@@ -87,8 +87,8 @@
                             <h5>{{$item->harga}}<small>/night</small></h5>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
         </section>
         <!--================ Accomodation Area  =================-->

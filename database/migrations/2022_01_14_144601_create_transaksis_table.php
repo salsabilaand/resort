@@ -21,6 +21,7 @@ class CreateTransaksisTable extends Migration
             $table->string('email');
             $table->bigInteger('id_user');
             $table->bigInteger('id_kamar');
+            $table->bigInteger('id_resort');
             $table->date('tgl_masuk');
             $table->date('tgl_keluar');
             $table->text('catatan');
