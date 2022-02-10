@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Transaksi;
+use App\Models\KontenBeranda;
 use Hash;
 use Session;
 
@@ -53,7 +54,8 @@ class CustomAuthController extends Controller
                     }else if($role=='1'){
                         return view('dashboard.dashboard-pemilik');
                     }else{
-                        return view('dashboard.dashboard-pengunjung');
+                        $dtKonten = KontenBeranda::all();
+                        return view('dashboard.dashboard-pengunjung', compact('dtKonten'));
                     }
                 }else{
                     return back()->with('fail','rolenya apa ges.');

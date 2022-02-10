@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
-use App\Models\KontenBeranda;
 use App\Models\Transaksi;
 use Carbon\Carbon;
 use Hash;
@@ -15,8 +14,6 @@ use Session;
 class PengunjungController extends Controller
 {
     public function index(){
-        // $dtKonten = KontenBeranda::all();
-        // return view('dashboard.dashboard-pengunjung', compact('dtKonten'));
         return view('dashboard.dashboard-pengunjung');
     }
 
