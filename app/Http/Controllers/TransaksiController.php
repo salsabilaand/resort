@@ -16,14 +16,11 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        // $dtTransaksi = Transaksi::with('kamar')->latest()->paginate(2);
-        // $dtTransaksi = Transaksi::all();
         $dtTransaksi = DB::table('transaksi')
-            ->where([
-                ['id_resort', [session('loginId')]],
-                ['status', ['Request' OR 'Accepted']]
-            ])->get();
-        // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
+            ->where('id_resort', [session('loginId')])
+            ->where('status', 'Request')
+            ->orWhere('status', 'Accepted')
+            ->get();
         return view('transaksi.data-transaksi', compact('dtTransaksi'));
     }
 
@@ -34,8 +31,6 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        // $kmr = Kamar::all();
-        // return view('transaksi.input-transaksi', compact('kmr'));
         return view('transaksi.input-transaksi');
     }
 
@@ -82,24 +77,17 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        // $kmr = Kamar::all();
-        // $dt = Transaksi::with('kamar')->findorfail($id);
         $dt = Transaksi::findorfail($id);
         return view('transaksi.edit-transaksi',compact('dt'));
-        // return view('transaksi.edit-transaksi',compact('dt', 'kmr'));
     }
 
     public function laporan(){
-        $array = ['Rejected', 'Accepted'];
-
-// User::whereIn('users.id',  $array)->get();
-
         $dtTransaksi = DB::table('transaksi')
-            ->where([
-                ['id_resort', [session('loginId')]],
-                ['status', $array]
-            ])->get();
-        // $dtTransaksi = DB::select('select * from transaksi where id_resort = ?', [session('loginId')]);
+            ->where('id_resort', [session('loginId')])
+            ->where('status', 'Rejected')
+            ->orWhere('status', 'Completed')
+            ->get();
+
         return view('transaksi.laporan-transaksi', compact('dtTransaksi'));
     }
 
@@ -139,8 +127,11 @@ class TransaksiController extends Controller
 
     public function cetak()
     {
-        $cetakTransaksi = DB::select('select * from users where role = ?', ['1']);
-        // $cetakTransaksi = DB::select('select * from transaksi where id_user = ?', [session('loginId')]);
+        $cetakTransaksi = DB::table('transaksi')
+            ->where('id_resort', [session('loginId')])
+            ->where('status', 'Rejected')
+            ->orWhere('status', 'Completed')
+            ->get();
         return view('transaksi.cetak-laporan-transaksi', compact('cetakTransaksi'));
     }
 }

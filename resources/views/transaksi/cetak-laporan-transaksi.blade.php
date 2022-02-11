@@ -32,7 +32,7 @@
                   @foreach ($cetakTransaksi as $item)
                   <tr>
                     <th>{{ $no++ }}</th>
-                    {{-- <th>{{$item->id_kamar}}</th> --}}
+                    <th>{{$item->id_kamar}}</th>
                     <th>{{$item->nama}}</th>
                     <th>{{$item->telepon}}</th>
                     <th>{{$item->email}}</th>
