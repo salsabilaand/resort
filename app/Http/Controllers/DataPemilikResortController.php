@@ -123,7 +123,7 @@ class DataPemilikResortController extends Controller
 
     public function cetak()
     {
-        $cetakResort = DB::select('select * from transaksi where id_resort = ?', ['1']);
+        $cetakResort = DB::select('select * from users where id = ?', ['1']);
         return view('admin.cetak-pemilik-resort', compact('cetakResort'));
     }
 }

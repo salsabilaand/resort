@@ -74,7 +74,7 @@
                 <div class="section-top-border">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <h3 class="mb-30 title_color">Form Element</h3>
+                            <h3 class="mb-30 title_color">Reservation Form</h3>
                             @foreach ($dtKamar as $item)
                             <form action="{{route('reservasi-proses', $item->id)}}" method="POST">
                                 @if(Session::has('success'))
@@ -95,23 +95,23 @@
                                     <span class="text-danger">@error('email') {{$message}} @enderror</span>
                                 </div>
                                 <div class="form-group last mb-4">
-                                    <label for="telepon">Telepon</label>
+                                    <label for="telepon">Phone</label>
                                     <input type="text" name="telepon" value="{{old('telepon')}}" id="telepon" class="form-control">
                                     <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
                                 </div>
                                 <div class="form-group last mb-4">
-                                    <label for="catatan">Catatan</label>
+                                    <label for="catatan">Notes</label>
                                     <input type="text" name="catatan" value="{{old('catatan')}}" id="catatan" class="form-control">
                                     <span class="text-danger">@error('telepon') {{$message}} @enderror</span>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 form-group">
-                                      <label for="tgl_masuk">Tanggal Check In</label>
+                                      <label for="tgl_masuk">Check In</label>
                                       <input required type="date" id="tgl_masuk" name="tgl_masuk" class="form-control">
                                       <span class="text-danger">@error('tgl_masuk') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-6 form-group">
-                                      <label for="tgl_keluar">Tanggal Check Out</label>
+                                      <label for="tgl_keluar">Check Out</label>
                                       <input required type="date" id="tgl_keluar" name="tgl_keluar" class="form-control">
                                       <span class="text-danger">@error('tgl_keluar') {{$message}} @enderror</span>
                                     </div>

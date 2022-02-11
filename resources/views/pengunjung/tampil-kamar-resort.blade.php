@@ -73,7 +73,7 @@
         <section class="accomodation_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color">Pilihan Kamar</h2>
+                    <h2 class="title_color">Rooms</h2>
                 </div>
                 <div class="row mb_30">
                     @foreach ($dtKamar as $item)
