@@ -71,7 +71,22 @@
         <div class="whole-wrap">
             <div class="container">
                 <div class="section-top-border">
-                    <h3 class="mb-30 title_color">Riwayat Reservasi</h3>
+                    <h3 class="mb-30 title_color">Important</h3>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <blockquote class="generic-blockquote">
+                                When you send a booking request, the booking is not confirmed until the owner of resort accepts the request. Go to Reservation > Reservation History and see whether your booking has been confirmed.
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="whole-wrap">
+            <div class="container">
+                <div class="section-top-border">
+                    <h3 class="mb-30 title_color">Reservation History</h3>
                     <div class="progress-table-wrap">
                         <div class="progress-table">
                             <div class="table-head">

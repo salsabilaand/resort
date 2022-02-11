@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Transaksi;
+use App\Models\KontenBeranda;
 use Carbon\Carbon;
 use Hash;
 use Session;
 
 class PengunjungController extends Controller
 {
+    
     public function index(){
-        return view('dashboard.dashboard-pengunjung');
+        $dtKonten = KontenBeranda::all();
+        return view('dashboard.dashboard-pengunjung', compact('dtKonten'));
     }
 
     public function editAkun(){
@@ -47,6 +50,10 @@ class PengunjungController extends Controller
     }
 
     public function tampilKamarPenginapan($id){
+        // $dtKamar = DB::table('kamar')
+        //         ->join('users', 'users.id', '=', 'kamar.id_user')
+        //         ->where('kamar.id_user', '=', $id)
+        //         ->get();
         $dtKamar = DB::select('select * from kamar where id_user = ?', [$id]);
         return view('pengunjung.tampil-kamar-resort',compact('dtKamar'));
     }

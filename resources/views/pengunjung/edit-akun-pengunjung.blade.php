@@ -72,7 +72,7 @@
                 <div class="section-top-border">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <h3 class="mb-30 title_color">Form Element</h3>
+                            <h3 class="mb-30 title_color">Edit Profile</h3>
                             @foreach ($dtAkun as $item)
                             <form action="{{route('edit-proses-akun-pengunjung', $item->id)}}" method="POST">
                                 @if(Session::has('success'))

@@ -83,7 +83,12 @@
                             </div>
                             <div class="details">
                                 <a href="{{route('tampil-kamar-resort',$item->id)}}"><h4 class="sec_h4">{{$item->nama_resort}}</h4></a>
-                                <p>{{$item->deskripsi}}</p>
+                            </div>
+                            <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                                <p class="col-lg-8 col-sm-12 footer-text m-0">{{$item->deskripsi}}</p>
+                                <div class="col-lg-4 col-sm-12 footer-social">
+                                    <a href="{{$item->link_yt}}"><i class="fa fa-youtube"></i></a>
+                                </div>
                             </div>	
                         </div>
                     </div>

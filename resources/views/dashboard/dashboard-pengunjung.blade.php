@@ -68,10 +68,10 @@
         <!--================Banner Area =================-->
         
         <!--================ About History Area  =================-->
+        @foreach ($dtKonten as $item)
         <section class="about_history_area section_gap">
             <div class="container">
                 <div class="row">
-                    @foreach ($dtKonten as $item)
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
                             <h2 class="title title_color">{{$item->judul_konten}}</h2>
@@ -81,10 +81,10 @@
                     <div class="col-md-6">
                         <img class="img-fluid" src="{{asset('img/'.$item->image)}}" alt="img">
                     </div>
-                    @endforeach
                 </div>
             </div>
         </section>
+        @endforeach
         <!--================ About History Area  =================-->
         
         <!--================ start footer Area  =================-->	
